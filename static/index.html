@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OmniUn — Unanswerable VideoQA</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+
+    <!-- ─── Landing ─── -->
+    <div id="landingScreen" class="landing-screen">
+      <div class="landing-card">
+        <p class="eyebrow">Dataset Explorer</p>
+        <h1>OmniUn</h1>
+        <p class="landing-desc">
+          Browse curated examples of questions that cannot be answered from
+          the available media, grouped by failure category.
+        </p>
+        <p class="choose-label">Choose a modality to begin</p>
+        <div id="modalityChooser" class="modality-grid"></div>
+        <p id="statsNote" class="stats-note"></p>
+      </div>
+    </div>
+
+    <!-- ─── Browse ─── -->
+    <div id="browseScreen" class="browse-screen hidden">
+      <header class="browse-header">
+        <button id="backBtn" class="back-btn" type="button">← Back</button>
+        <span class="header-title">OmniUn</span>
+        <div id="activeModalityChips" class="modality-tabs"></div>
+        <input id="searchInput" class="search-input" type="search" placeholder="Search questions…">
+      </header>
+
+      <main class="browse-main">
+        <div id="statusBar" class="status-bar"></div>
+        <div id="resultsList" class="results-list"></div>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
