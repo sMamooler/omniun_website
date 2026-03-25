@@ -61,10 +61,9 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 .landing-logo {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  margin-bottom: 16px;
+  width: 56px;
+  height: auto;
+  margin-bottom: 12px;
 }
 
 .landing-card h1 {
