@@ -76,7 +76,6 @@ function renderModalityButtons(container, compact) {
               type="button" data-modality="${escapeHtml(m)}">
         <span class="btn-icon">${ICONS[m] || "📁"}</span>
         <span class="btn-label">${titleCase(m)}</span>
-        <span class="btn-count">${state.stats.counts_by_modality[m]}</span>
       </button>
     `).join("");
   }
@@ -128,7 +127,6 @@ function categorySectionHTML(group) {
     <section class="category-section">
       <div class="category-header">
         <h2>${escapeHtml(titleCase(group.category))}</h2>
-        <span class="category-count">${group.items.length} example${group.items.length === 1 ? "" : "s"}</span>
       </div>
       <div class="examples-grid">${cards}</div>
     </section>
@@ -146,9 +144,8 @@ function renderResults() {
     return;
   }
 
-  const total = groups.reduce((n, g) => n + g.items.length, 0);
   els.statusBar.textContent =
-    `${total} ${titleCase(state.modality)} example${total === 1 ? "" : "s"} across ${groups.length} categor${groups.length === 1 ? "y" : "ies"}`;
+    `${titleCase(state.modality)} · ${groups.length} categor${groups.length === 1 ? "y" : "ies"}`;
 
   els.resultsList.innerHTML = groups.map(categorySectionHTML).join("");
 }
@@ -188,9 +185,8 @@ async function boot() {
   state.stats      = payload.stats;
   state.allSamples = payload.samples;
 
-  const total = state.stats.total_samples;
   const cats  = Object.keys(state.stats.counts_by_category).length;
-  els.statsNote.textContent = `${total} samples · ${cats} categories`;
+  els.statsNote.textContent = `${cats} categories`;
 
   renderModalityButtons(els.modalityChooser, false);
 }
