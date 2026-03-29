@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_samples": 79,
+    "total_samples": 70,
     "counts_by_category": {
       "ambiguous_question_goalbased": 10,
       "ambiguous_question_referential": 10,
@@ -8,12 +8,11 @@
       "missing_contextual_information": 10,
       "missing_latent_evidence": 10,
       "missing_nonstationary_external_information": 10,
-      "missing_observable_evidence": 10,
-      "answerable": 9
+      "missing_observable_evidence": 10
     },
     "counts_by_modality": {
-      "audio": 39,
-      "video": 40
+      "audio": 35,
+      "video": 35
     },
     "missing_media": 0
   },
@@ -856,114 +855,6 @@
       "clarification": null,
       "answer": null,
       "media_url": "/static/media/video/5553110507.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:audio:0",
-      "key": "slue_p2_sqa5_test_181",
-      "category": "answerable",
-      "modality": "audio",
-      "question": "What was the usual type of school discipline?",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/audio/slue_p2_sqa5_test_181.wav",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:audio:1",
-      "key": "slue_p2_sqa5_test_183",
-      "category": "answerable",
-      "modality": "audio",
-      "question": "Which country's imports became the de facto mass market leaders?",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/audio/slue_p2_sqa5_test_183.wav",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:audio:2",
-      "key": "slue_p2_sqa5_test_53",
-      "category": "answerable",
-      "modality": "audio",
-      "question": "How did Luther express the destruction?",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/audio/slue_p2_sqa5_test_53.wav",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:audio:3",
-      "key": "slue_p2_sqa5_test_125",
-      "category": "answerable",
-      "modality": "audio",
-      "question": "What kind of missions are the armed forces regularly deployed for?",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/audio/slue_p2_sqa5_test_125.wav",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:video:0",
-      "key": "1111/3430723284",
-      "category": "answerable",
-      "modality": "video",
-      "question": "why is the lady holding baby in her hand",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/video/3430723284.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:video:1",
-      "key": "1052/4522565412",
-      "category": "answerable",
-      "modality": "video",
-      "question": "why did the man want to try to solving the rubik s cube so quickly",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/video/4522565412.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:video:2",
-      "key": "1001/9289576155",
-      "category": "answerable",
-      "modality": "video",
-      "question": "why does one cat nudge the other at the beginning",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/video/9289576155.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:video:3",
-      "key": "1011/6447803681",
-      "category": "answerable",
-      "modality": "video",
-      "question": "where is this happening",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/video/6447803681.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "answerable:video:4",
-      "key": "1005/2676529856",
-      "category": "answerable",
-      "modality": "video",
-      "question": "why was the baby moving around in circles at the start",
-      "explanation": null,
-      "clarification": null,
-      "answer": null,
-      "media_url": "/static/media/video/2676529856.mp4",
       "media_exists": true
     }
   ]

@@ -99,15 +99,6 @@ def normalize_response(response) -> dict:
             "clarification": None, "answer": None}
 
 
-def normalize_validation_record(record: dict) -> dict:
-    """Map a data_validation record's flat fields to the response format."""
-    return {
-        "question":      str(record.get("question") or ""),
-        "explanation":   record.get("reference_explanation") or None,
-        "clarification": record.get("clarification_information") or None,
-        "answer":        record.get("answer_given_clarification_information") or None,
-    }
-
 
 # ── Main ───────────────────────────────────────────────────────────────────
 
@@ -185,80 +176,6 @@ def main() -> None:
                 picked += 1
 
             print(f"{category}/{modality}: picked {picked}")
-
-    # ── answerable category (sourced directly from data_validation) ──────────
-    for modality in ["audio", "video"]:
-        jf = (
-            VALIDATION_ROOT
-            / "answerable"
-            / modality
-            / "gemini_single_pass_category_decision_tree"
-            / "gemini_results.jsonl"
-        )
-        if not jf.exists():
-            print(f"answerable/{modality}: jsonl not found, skipping")
-            continue
-
-        used_keys.setdefault(modality, set())
-        records = [
-            r for r in read_jsonl(jf)
-            if r.get("validation_result", {}).get("keep") is True
-        ]
-
-        def answerable_candidates():
-            seen: set[str] = set()
-            # First pass: keys not used by any other category
-            for r in records:
-                k = str(r.get("key") or "")
-                if k not in used_keys[modality] and k not in seen:
-                    seen.add(k)
-                    yield r
-            # Second pass: already-used keys (different category), still unique within answerable
-            for r in records:
-                k = str(r.get("key") or "")
-                if k in used_keys[modality] and k not in seen:
-                    seen.add(k)
-                    yield r
-
-        picked = 0
-        for idx, record in enumerate(answerable_candidates()):
-            if picked >= PER_CATEGORY:
-                break
-
-            key = str(record.get("key") or "")
-            src = resolve_media(modality, key)
-            if src is None:
-                continue
-
-            dest_dir = OUT_MEDIA / modality
-            dest_dir.mkdir(parents=True, exist_ok=True)
-            dest = dest_dir / src.name
-            if not dest.exists():
-                print(f"  copying {src.name} …")
-                shutil.copy2(src, dest)
-
-            used_keys[modality].add(key)
-            resp = normalize_validation_record(record)
-            sample_id = f"answerable:{modality}:{idx}"
-
-            samples.append({
-                "id":            sample_id,
-                "key":           key,
-                "category":      "answerable",
-                "modality":      modality,
-                "question":      resp["question"],
-                "explanation":   resp["explanation"],
-                "clarification": resp["clarification"],
-                "answer":        resp["answer"],
-                "media_url":     f"/static/media/{modality}/{dest.name}",
-                "media_exists":  True,
-            })
-
-            stats_by_category["answerable"] = stats_by_category.get("answerable", 0) + 1
-            stats_by_modality[modality] = stats_by_modality.get(modality, 0) + 1
-            picked += 1
-
-        print(f"answerable/{modality}: picked {picked}")
 
     output = {
         "stats": {
