@@ -167,7 +167,7 @@ def main() -> None:
                     "explanation":   resp.get("explanation"),
                     "clarification": resp.get("clarification"),
                     "answer":        resp.get("answer"),
-                    "media_url":     f"/static/media/{modality}/{dest.name}",
+                    "media_url":     f"media/{modality}/{dest.name}",
                     "media_exists":  True,
                 })
 
