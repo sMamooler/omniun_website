@@ -1,6 +1,6 @@
 {
   "stats": {
-    "total_samples": 70,
+    "total_samples": 79,
     "counts_by_category": {
       "ambiguous_question_goalbased": 10,
       "ambiguous_question_referential": 10,
@@ -8,11 +8,12 @@
       "missing_contextual_information": 10,
       "missing_latent_evidence": 10,
       "missing_nonstationary_external_information": 10,
-      "missing_observable_evidence": 10
+      "missing_observable_evidence": 10,
+      "answerable": 9
     },
     "counts_by_modality": {
-      "audio": 35,
-      "video": 35
+      "audio": 39,
+      "video": 40
     },
     "missing_media": 0
   },
@@ -26,23 +27,11 @@
       "explanation": "The question asks if Ethan Hawke was 'persistent', which is an evaluative term that lacks a specific threshold for the number of proposal attempts required to meet that description.",
       "clarification": "Do you mean proposing more than once before she accepted?",
       "answer": "Yes, he proposed twice before she accepted.",
-      "media_url": "media/audio/slue_p2_sqa5_test_327.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_327.wav",
       "media_exists": true
     },
     {
       "id": "ambiguous_question_goalbased:audio:1",
-      "key": "slue_p2_sqa5_test_57",
-      "category": "ambiguous_question_goalbased",
-      "modality": "audio",
-      "question": "Did Bach make extensive use of Luther's hymns?",
-      "explanation": "The question uses the evaluative term 'extensive' without defining a clear threshold or criterion. 'Extensive' could mean simply including a few verses in his works, or it could mean dedicating entire compositions to them.",
-      "clarification": "By extensive, I mean did he base entire cantatas entirely on them?",
-      "answer": "Yes, the audio states that Bach based chorale cantatas entirely on Luther's hymns, such as 'Christ lag in Todesbanden'.",
-      "media_url": "media/audio/slue_p2_sqa5_test_57.wav",
-      "media_exists": true
-    },
-    {
-      "id": "ambiguous_question_goalbased:audio:2",
       "key": "slue_p2_sqa5_test_12",
       "category": "ambiguous_question_goalbased",
       "modality": "audio",
@@ -50,11 +39,11 @@
       "explanation": "The word 'well' introduces goal-based ambiguity because the evaluation criterion is underspecified. It is unclear whether the user considers handling the questioning 'well' to mean answering all questions immediately and decisively, or if it means acting cautiously and strategically by taking time to consider his position.",
       "clarification": "Are you asking if he answered all the questions immediately and decisively, or if he took a cautious and deliberate approach?",
       "answer": "If you mean taking a cautious and deliberate approach, yes; while he immediately confirmed he was the author of the books, he requested time to think about whether he stood by their contents, and then prayed and consulted friends.",
-      "media_url": "media/audio/slue_p2_sqa5_test_12.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_12.wav",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_goalbased:audio:3",
+      "id": "ambiguous_question_goalbased:audio:2",
       "key": "slue_p2_sqa5_test_379",
       "category": "ambiguous_question_goalbased",
       "modality": "audio",
@@ -62,11 +51,11 @@
       "explanation": "The question uses the evaluative term 'fair' without specifying a criterion. It is ambiguous whether fairness is being judged by the equal treatment of all states (which the audio confirms by stating each state has equal suffrage and two senators) or by the inclusion of all regions (which the audio notes is not the case, as DC and territories have no representation).",
       "clarification": "Are you evaluating fairness based on whether all states are treated equally, or based on whether all regions, including territories, are given representation?",
       "answer": "If you are evaluating based on equal treatment of states, yes, the audio indicates each of the 50 states has equal representation. If you are evaluating based on the inclusion of all regions, no, because the audio states that the District of Columbia and territories are not entitled to any representation.",
-      "media_url": "media/audio/slue_p2_sqa5_test_379.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_379.wav",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_goalbased:audio:4",
+      "id": "ambiguous_question_goalbased:audio:3",
       "key": "slue_p2_sqa5_test_140",
       "category": "ambiguous_question_goalbased",
       "modality": "audio",
@@ -74,7 +63,19 @@
       "explanation": "The question contains goal-based ambiguity because 'good job' is an evaluative phrase without a specified criterion. A 'good job' could be evaluated based on clear articulation and pronunciation, or it could be evaluated based on engaging, dramatic expression.",
       "clarification": "Are you asking if the speaker is reading with clear articulation, or if they are reading with engaging dramatic expression?",
       "answer": "If you are asking about clear articulation, yes, the speaker enunciates each word carefully and clearly. If you are asking about engaging dramatic expression, no, the reading is quite flat and monotonous.",
-      "media_url": "media/audio/slue_p2_sqa5_test_140.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_140.wav",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_goalbased:audio:4",
+      "key": "slue_p2_sqa5_test_125",
+      "category": "ambiguous_question_goalbased",
+      "modality": "audio",
+      "question": "Was Canada's international strategy effective during the Cold War?",
+      "explanation": "The question uses the evaluative term 'effective' without specifying the criterion for success. It is goal-based ambiguous because it is unclear whether the user is judging effectiveness based on military defense and deterrence or based on diplomatic de-escalation and peacekeeping.",
+      "clarification": "Are you measuring effectiveness based on their military defense initiatives or their diplomatic peacekeeping efforts?",
+      "answer": "If based on military defense, Canada effectively contributed by founding NATO and establishing NORAD with the US to defend against Soviet aerial attacks. If based on diplomatic peacekeeping, they effectively eased tensions during the 1956 Suez Crisis by proposing the UN Peacekeeping Force.",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_125.wav",
       "media_exists": true
     },
     {
@@ -86,23 +87,11 @@
       "explanation": "The term 'correctly' is underspecified. It could refer to holding the baby safely by supporting the head and neck, or it could refer to holding the baby in a specific position to help alleviate the hiccups they are experiencing (such as holding them upright to burp).",
       "clarification": "Are you asking if he is holding the baby correctly for general safety and head support, or correctly to help stop the baby's hiccups?",
       "answer": "If you are asking about general safety, yes, he is supporting the baby's head and body securely with his arm and hand. If you are asking about helping with the hiccups, no, the baby is lying horizontally rather than being held upright, which is typically better for burping or relieving hiccups.",
-      "media_url": "media/video/10316970886.mp4",
+      "media_url": "/static/media/video/10316970886.mp4",
       "media_exists": true
     },
     {
       "id": "ambiguous_question_goalbased:video:1",
-      "key": "0099/3357799819",
-      "category": "ambiguous_question_goalbased",
-      "modality": "video",
-      "question": "Did the baby roll over successfully?",
-      "explanation": "The term \"successfully\" is goal-based ambiguous. It is unclear whether the user is evaluating success based on the final outcome (the baby simply ending up on its stomach) or the method of execution (the baby achieving the developmental milestone of rolling over independently without physical assistance).",
-      "clarification": "I am asking if the baby rolled over independently without any help.",
-      "answer": "No, an adult's hands are clearly visible guiding the baby's legs and pushing its back to physically help it roll from its back onto its stomach.",
-      "media_url": "media/video/3357799819.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "ambiguous_question_goalbased:video:2",
       "key": "1021/4129080039",
       "category": "ambiguous_question_goalbased",
       "modality": "video",
@@ -110,11 +99,11 @@
       "explanation": "The phrase 'good job' is underspecified and depends on the evaluation criterion. It could refer to the bird's physical ability to climb securely without falling, or it could refer to whether the bird is navigating the enclosure without causing damage to the vegetation.",
       "clarification": "Are you asking if the bird is maintaining a secure grip to prevent falling, or if it is climbing without damaging the plants in the enclosure?",
       "answer": "If you are asking about a secure grip, yes, the bird uses its beak and claws to firmly hold onto the wire mesh. If you are asking about not damaging the plants, no, the bird is pulling heavily on a large leaf as it climbs.",
-      "media_url": "media/video/4129080039.mp4",
+      "media_url": "/static/media/video/4129080039.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_goalbased:video:3",
+      "id": "ambiguous_question_goalbased:video:2",
       "key": "1162/8245178837",
       "category": "ambiguous_question_goalbased",
       "modality": "video",
@@ -122,11 +111,11 @@
       "explanation": "The phrase 'eating well' is goal-based ambiguous. It could refer to the baby's appetite and successful intake of food (whether they are actually consuming it), or it could refer to their motor skills and neatness (whether they are using the spoon properly without making a mess).",
       "clarification": "I am asking if the baby is eating neatly and demonstrating proper use of the spoon.",
       "answer": "No, the baby is making a significant mess, getting food all over their face, hands, and bib. They struggle to use the spoon correctly and often resort to putting their fingers in the jar or drinking directly from it.",
-      "media_url": "media/video/8245178837.mp4",
+      "media_url": "/static/media/video/8245178837.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_goalbased:video:4",
+      "id": "ambiguous_question_goalbased:video:3",
       "key": "1110/8666744695",
       "category": "ambiguous_question_goalbased",
       "modality": "video",
@@ -134,19 +123,31 @@
       "explanation": "The phrase 'being good' is goal-based ambiguous. It could mean the dog is being gentle and friendly with the children (a safety/social goal), or it could mean the dog is being obedient and not interfering with their activity (a discipline/focus goal).",
       "clarification": "Are you asking if the dog is being gentle and non-aggressive with the children, or if it is leaving them alone so they can draw?",
       "answer": "If you mean being gentle, yes, the dog is calmly sniffing the children and wagging its tail without showing any aggression. If you mean leaving them alone, no, the dog walks right up to the children and interrupts their drawing.",
-      "media_url": "media/video/8666744695.mp4",
+      "media_url": "/static/media/video/8666744695.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_referential:audio:5",
-      "key": "slue_p2_sqa5_test_125",
+      "id": "ambiguous_question_goalbased:video:4",
+      "key": "1103/6706220611",
+      "category": "ambiguous_question_goalbased",
+      "modality": "video",
+      "question": "Is the baby using the pillows correctly?",
+      "explanation": "The term 'correctly' is goal-based ambiguous because it lacks a specific standard of evaluation. It could refer to using the pillows for their conventional purpose (resting or sleeping) or using them effectively as a soft obstacle for play and motor development.",
+      "clarification": "Whether 'correctly' refers to their intended purpose for resting, or their use as a play object.",
+      "answer": "If referring to resting, no, she is actively climbing, rolling, and playing on them. If referring to play, yes, she is successfully using them to safely practice her motor skills.",
+      "media_url": "/static/media/video/6706220611.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:audio:1",
+      "key": "slue_p2_sqa5_test_57",
       "category": "ambiguous_question_referential",
       "modality": "audio",
-      "question": "What was Canada's contribution during the war?",
-      "explanation": "The phrase 'the war' is referentially ambiguous because the audio explicitly mentions two different wars: the Cold War and the Korean War. It is unclear which specific historical conflict the user is referring to.",
-      "clarification": "Are you asking about Canada's contribution during the Cold War or the Korean War?",
-      "answer": "During the Korean War, Canada was a major contributor to UN forces.",
-      "media_url": "media/audio/slue_p2_sqa5_test_125.wav",
+      "question": "What did he base his work on?",
+      "explanation": "The pronoun 'he' is referentially ambiguous because the audio mentions two different historical figures who based their musical works on existing material: Martin Luther (who based his Easter hymn on 'Victimae paschali laudes') and Johann Sebastian Bach (who based his chorale cantatas on Luther's hymns).",
+      "clarification": "I am asking about Martin Luther.",
+      "answer": "Martin Luther based his Easter hymn, 'Christ ist erstanden' (Christ is risen), on 'Victimae paschali laudes'.",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_57.wav",
       "media_exists": true
     },
     {
@@ -158,7 +159,7 @@
       "explanation": "The pronoun 'his' is referentially ambiguous because the audio contrasts the views of two different figures, Zwingli and Luther, regarding this specific topic.",
       "clarification": "Are you asking about Zwingli or Luther?",
       "answer": "Zwingli denied Jesus's ability to be in more than one place at a time, whereas Luther stressed his ubiquity.",
-      "media_url": "media/audio/slue_p2_sqa5_test_114.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_114.wav",
       "media_exists": true
     },
     {
@@ -170,7 +171,7 @@
       "explanation": "The pronoun 'he' is referentially ambiguous. The audio mentions two different men who contributed specific elements to the publication: Luther (who provided notes and prefaces) and Lucas Cranach (who provided woodcuts).",
       "clarification": "I am referring to Lucas Cranach.",
       "answer": "He contributed woodcuts that contained anti-papal imagery.",
-      "media_url": "media/audio/slue_p2_sqa5_test_71.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_71.wav",
       "media_exists": true
     },
     {
@@ -182,7 +183,7 @@
       "explanation": "The question is referentially ambiguous because the pronoun 'he' could refer to any of the male actors mentioned in the audio, such as William Shatner, Leonard Nimoy, DeForest Kelley, James Doohan, George Takei, or Walter Koenig.",
       "clarification": "I am asking about Leonard Nimoy.",
       "answer": "Leonard Nimoy played the character Spock.",
-      "media_url": "media/audio/slue_p2_sqa5_test_377.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_377.wav",
       "media_exists": true
     },
     {
@@ -194,23 +195,11 @@
       "explanation": "The question uses the vague pronouns 'he' and 'them', which are referentially ambiguous. In the context of the audio, 'he' could refer to Martin Luther or Moses, and 'them' could refer to the Jews or the people who led others to false gods.",
       "clarification": "Are you asking about what Martin Luther said should happen to the Jews, or what Moses prescribed for those who led others to false gods?",
       "answer": "If you are asking about Martin Luther and the Jews, he said their property and money should be seized, their homes smashed, and they should be forced into labor, expelled, or slain.",
-      "media_url": "media/audio/slue_p2_sqa5_test_52.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_52.wav",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_referential:video:5",
-      "key": "1103/6706220611",
-      "category": "ambiguous_question_referential",
-      "modality": "video",
-      "question": "What color are their socks?",
-      "explanation": "The pronoun 'their' is referentially ambiguous because both the baby playing on the floor and the adult standing nearby are wearing socks.",
-      "clarification": "Are you asking about the baby's socks or the adult's socks?",
-      "answer": "The baby is wearing black and white striped socks with green toes and heels.",
-      "media_url": "media/video/6706220611.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "ambiguous_question_referential:video:6",
+      "id": "ambiguous_question_referential:video:4",
       "key": "0060/4976487220",
       "category": "ambiguous_question_referential",
       "modality": "video",
@@ -218,11 +207,11 @@
       "explanation": "The pronoun 'she' is ambiguous because there are multiple women visible in the video (e.g., the speaker, the woman sitting next to her, the woman in the green hoodie), making it unclear which specific person the user is asking about.",
       "clarification": "The woman who is speaking and reading the story.",
       "answer": "She is wearing a white long-sleeved shirt and a pink, blue, and white patterned scarf.",
-      "media_url": "media/video/4976487220.mp4",
+      "media_url": "/static/media/video/4976487220.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_referential:video:7",
+      "id": "ambiguous_question_referential:video:5",
       "key": "1019/2399811629",
       "category": "ambiguous_question_referential",
       "modality": "video",
@@ -230,11 +219,11 @@
       "explanation": "The phrase 'the man in the white shirt' is referentially ambiguous because there are two men wearing white shirts in the video: the main subject who climbs down the stairs, and another man standing in the background.",
       "clarification": "The man standing in the background.",
       "answer": "He is standing, smiling, and watching the main subject.",
-      "media_url": "media/video/2399811629.mp4",
+      "media_url": "/static/media/video/2399811629.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_referential:video:8",
+      "id": "ambiguous_question_referential:video:6",
       "key": "1164/9486619004",
       "category": "ambiguous_question_referential",
       "modality": "video",
@@ -242,19 +231,31 @@
       "explanation": "The phrase 'the coat' is referentially ambiguous in this context because it could refer to either the woman's winter jacket or the dog's fur coat.",
       "clarification": "I am asking about the woman's clothing.",
       "answer": "The woman's coat is light blue.",
-      "media_url": "media/video/9486619004.mp4",
+      "media_url": "/static/media/video/9486619004.mp4",
       "media_exists": true
     },
     {
-      "id": "ambiguous_question_referential:video:9",
-      "key": "1021/3492285627",
+      "id": "ambiguous_question_referential:video:7",
+      "key": "1015/3859630486",
       "category": "ambiguous_question_referential",
       "modality": "video",
-      "question": "Does she eat any of it?",
-      "explanation": "The pronoun 'it' is referentially ambiguous because there are two distinct types of food on the high chair tray (the green pieces and the dark red pieces), leaving it unclear which pile of food the user is asking about.",
-      "clarification": "the green food on the tray",
-      "answer": "No, she does not eat any of the green food; she only picks up and eats the dark red food.",
-      "media_url": "media/video/3492285627.mp4",
+      "question": "What is the person in the foreground holding?",
+      "explanation": "It is unclear which person is being referred to, as both a woman and a young boy are prominently featured in the foreground throughout the video.",
+      "clarification": "The young boy.",
+      "answer": "The young boy is holding a blue toy shovel.",
+      "media_url": "/static/media/video/3859630486.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:video:8",
+      "key": "1202/10652030225",
+      "category": "ambiguous_question_referential",
+      "modality": "video",
+      "question": "Where does the man with the stick hit the other man after he finishes hitting him there?",
+      "explanation": "The word 'there' is referentially ambiguous because the man is hit with the stick in multiple locations throughout the video (chest, arm, leg, back, etc.), making it unclear which specific body part the user is referring to as the reference point.",
+      "clarification": "on the arm",
+      "answer": "After hitting him on the arm, the man with the stick proceeds to hit him on the leg.",
+      "media_url": "/static/media/video/10652030225.mp4",
       "media_exists": true
     },
     {
@@ -266,7 +267,7 @@
       "explanation": "The audio explicitly states that Princess Margaret's ashes were interred in the chapel alongside him in 2002, contradicting the premise that they were scattered at sea.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_346.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_346.wav",
       "media_exists": true
     },
     {
@@ -278,7 +279,7 @@
       "explanation": "The audio explicitly states that the species is not found in high altitude regions, directly contradicting the premise of the question.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_404.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_404.wav",
       "media_exists": true
     },
     {
@@ -290,7 +291,7 @@
       "explanation": "The audio explicitly states that Oprah Winfrey discussed truthiness with Frank Rich on her show, contradicting the premise that she refused to do so.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_279.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_279.wav",
       "media_exists": true
     },
     {
@@ -302,7 +303,7 @@
       "explanation": "The audio explicitly states that Luther's version quickly became a popular and influential Bible translation, contradicting the premise that it failed to become popular.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_44.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_44.wav",
       "media_exists": true
     },
     {
@@ -314,31 +315,31 @@
       "explanation": "The audio explicitly states that Dr. House works at the fictional Princeton Plainsboro Teaching Hospital, contradicting the premise that he works at a real hospital.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_302.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_302.wav",
       "media_exists": true
     },
     {
-      "id": "false_premise:video:10",
-      "key": "1015/3859630486",
+      "id": "false_premise:video:1",
+      "key": "0099/3357799819",
       "category": "false_premise",
       "modality": "video",
-      "question": "Why does the woman push the little boy into the water?",
-      "explanation": "The woman never pushes the boy into the water; instead, she holds his hand as they walk and later carries him.",
+      "question": "What color is the toy the baby is holding while rolling over?",
+      "explanation": "The baby is not holding any toy in the video.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/3859630486.mp4",
+      "media_url": "/static/media/video/3357799819.mp4",
       "media_exists": true
     },
     {
-      "id": "false_premise:video:11",
-      "key": "1202/10652030225",
+      "id": "false_premise:video:9",
+      "key": "1021/3492285627",
       "category": "false_premise",
       "modality": "video",
-      "question": "Why does the man being hit with the stick fall to the ground?",
-      "explanation": "The man being hit with the stick remains standing throughout the entire video and never falls to the ground.",
+      "question": "What color is the spoon the toddler is using to eat?",
+      "explanation": "The toddler is eating with their hands and is not using a spoon.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/10652030225.mp4",
+      "media_url": "/static/media/video/3492285627.mp4",
       "media_exists": true
     },
     {
@@ -350,7 +351,7 @@
       "explanation": "The dog does not jump onto the couch; it lies down on the floor next to it.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/3495630576.mp4",
+      "media_url": "/static/media/video/3495630576.mp4",
       "media_exists": true
     },
     {
@@ -362,7 +363,7 @@
       "explanation": "There is no woman playing a flute in the video; the woman present is playing a violin.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/6042037966.mp4",
+      "media_url": "/static/media/video/6042037966.mp4",
       "media_exists": true
     },
     {
@@ -374,11 +375,11 @@
       "explanation": "There is no dog running alongside the group of people in the video.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/3525178080.mp4",
+      "media_url": "/static/media/video/3525178080.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:audio:15",
+      "id": "missing_contextual_information:audio:14",
       "key": "slue_p2_sqa5_test_216",
       "category": "missing_contextual_information",
       "modality": "audio",
@@ -386,11 +387,11 @@
       "explanation": "The assistant cannot answer the question because it does not know what the user's favorite song is.",
       "clarification": "The user's favorite song is 'Fell in Love with a Girl' by The White Stripes.",
       "answer": "Yes, the audio mentions that the director of the music video for 'Fell in Love with a Girl' is Michel Gondry.",
-      "media_url": "media/audio/slue_p2_sqa5_test_216.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_216.wav",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:audio:16",
+      "id": "missing_contextual_information:audio:15",
       "key": "slue_p2_sqa5_test_16",
       "category": "missing_contextual_information",
       "modality": "audio",
@@ -398,11 +399,11 @@
       "explanation": "The assistant cannot answer this question because it does not know which specific quote the user's professor assigned for the essay.",
       "clarification": "The professor assigned the quote 'as soon as the coin in the coffer rings, the soul from purgatory springs'.",
       "answer": "Yes, the audio contains that quote and mentions that it is attributed to Johann Tetzel.",
-      "media_url": "media/audio/slue_p2_sqa5_test_16.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_16.wav",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:audio:17",
+      "id": "missing_contextual_information:audio:16",
       "key": "slue_p2_sqa5_test_15",
       "category": "missing_contextual_information",
       "modality": "audio",
@@ -410,11 +411,11 @@
       "explanation": "The assistant does not know the street where the user's apartment is located, making it impossible to match it with the addresses provided in the audio.",
       "clarification": "My apartment is located on South Lake Shore Drive.",
       "answer": "The Shedd Aquarium, Museum of Science and Industry, and Adler Planetarium are all located on South Lake Shore Drive.",
-      "media_url": "media/audio/slue_p2_sqa5_test_15.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_15.wav",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:audio:18",
+      "id": "missing_contextual_information:audio:17",
       "key": "slue_p2_sqa5_test_47",
       "category": "missing_contextual_information",
       "modality": "audio",
@@ -422,23 +423,23 @@
       "explanation": "The audio describes Luther's positions on various theological doctrines, but the assistant does not know what specific view the user's theology professor holds.",
       "clarification": "My theology professor holds the view that the mass is a sacrifice.",
       "answer": "No, according to the audio, Luther condemned the idea that the mass is a sacrifice as idolatry, asserting instead that it is a gift.",
-      "media_url": "media/audio/slue_p2_sqa5_test_47.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_47.wav",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:audio:19",
-      "key": "slue_p2_sqa5_test_111",
+      "id": "missing_contextual_information:audio:18",
+      "key": "slue_p2_sqa5_test_119",
       "category": "missing_contextual_information",
       "modality": "audio",
-      "question": "What date did Luther write a letter to the person I am named after?",
-      "explanation": "The audio mentions Luther writing a letter to George Spalatin, but the assistant does not know the user's name or who they are named after. Without this personal contextual information, the assistant cannot determine which historical figure the user is asking about.",
-      "clarification": "The user is named after George Spalatin.",
-      "answer": "Luther wrote to George Spalatin on November 30, 1524.",
-      "media_url": "media/audio/slue_p2_sqa5_test_111.wav",
+      "question": "Based on the audio, what trophy is awarded to the champion of the league my brother plays in?",
+      "explanation": "The assistant cannot answer this question because it does not know which sports league the user's brother plays in.",
+      "clarification": "My brother plays in the NFL.",
+      "answer": "The Vince Lombardi Trophy.",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_119.wav",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:video:15",
+      "id": "missing_contextual_information:video:14",
       "key": "1006/5032479143",
       "category": "missing_contextual_information",
       "modality": "video",
@@ -446,11 +447,11 @@
       "explanation": "The video shows two cyclists riding together, one in front and one behind. However, without knowing which cyclist is the user's brother, it is impossible to determine his position.",
       "clarification": "My brother is the cyclist wearing the red shirt.",
       "answer": "Your brother is trailing the other cyclist.",
-      "media_url": "media/video/5032479143.mp4",
+      "media_url": "/static/media/video/5032479143.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:video:16",
+      "id": "missing_contextual_information:video:15",
       "key": "1026/4430422083",
       "category": "missing_contextual_information",
       "modality": "video",
@@ -458,35 +459,11 @@
       "explanation": "The video shows multiple chickens, but the assistant does not know the private naming convention the user uses for them, making it impossible to identify which chicken is 'Oreo' without additional context.",
       "clarification": "The user gave the name 'Oreo' to the chicken with black and white striped feathers.",
       "answer": "Yes, the boy is looking closely at the chicken with black and white striped feathers, so he is looking at the one you named 'Oreo'.",
-      "media_url": "media/video/4430422083.mp4",
+      "media_url": "/static/media/video/4430422083.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_contextual_information:video:17",
-      "key": "1012/5866947362",
-      "category": "missing_contextual_information",
-      "modality": "video",
-      "question": "Is the man turning the pages of the book my brother?",
-      "explanation": "The video shows a man turning the pages of a book, but the assistant does not know the identity of the user's brother to confirm if it is the same person.",
-      "clarification": "My brother's name is David.",
-      "answer": "Yes, the man turning the pages introduces himself as David near the end of the video, so he is your brother.",
-      "media_url": "media/video/5866947362.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "missing_contextual_information:video:18",
-      "key": "1150/2876825076",
-      "category": "missing_contextual_information",
-      "modality": "video",
-      "question": "Is the person I asked to organize the closet standing inside it?",
-      "explanation": "The video shows multiple people in the room, including one person standing inside the closet. However, the assistant cannot determine if this is the correct person without knowing the specific identity of the individual the user assigned to this task.",
-      "clarification": "The person you asked to organize the closet is the woman wearing a plaid shirt.",
-      "answer": "Yes, the woman wearing a plaid shirt, whom you asked to organize the closet, is seen standing inside the open closet while looking at an item in her hands.",
-      "media_url": "media/video/2876825076.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "missing_contextual_information:video:19",
+      "id": "missing_contextual_information:video:16",
       "key": "1000/4607629530",
       "category": "missing_contextual_information",
       "modality": "video",
@@ -494,23 +471,35 @@
       "explanation": "The video features multiple people, so the assistant cannot determine the answer without knowing the specific identity of the user's friend.",
       "clarification": "My friend is the man sitting on the left wearing a black long-sleeved shirt.",
       "answer": "Yes, your friend is wearing a silver watch on his left wrist.",
-      "media_url": "media/video/4607629530.mp4",
+      "media_url": "/static/media/video/4607629530.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:audio:20",
-      "key": "slue_p2_sqa5_test_119",
-      "category": "missing_latent_evidence",
-      "modality": "audio",
-      "question": "Is the speaker recording this information for a podcast or an educational video?",
-      "explanation": "The audio captures the speaker narrating facts about American football, but the intended destination or purpose of the recording is a latent goal that cannot be observed from the audio alone.",
-      "clarification": null,
-      "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_119.wav",
+      "id": "missing_contextual_information:video:17",
+      "key": "1005/4346015300",
+      "category": "missing_contextual_information",
+      "modality": "video",
+      "question": "Is the cat pawing at my brother's monitor?",
+      "explanation": "The video shows a white cat pawing at a computer monitor, but without external context, it is impossible to know who the monitor belongs to.",
+      "clarification": "The monitor shown on the desk displaying the game belongs to your brother.",
+      "answer": "Yes, the cat is pawing at your brother's monitor.",
+      "media_url": "/static/media/video/4346015300.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:audio:21",
+      "id": "missing_contextual_information:video:18",
+      "key": "0002/6862984319",
+      "category": "missing_contextual_information",
+      "modality": "video",
+      "question": "Does the elephant I sponsor have longer tusks than the other elephant in the video?",
+      "explanation": "The video shows two elephants with different tusk lengths interacting, but the assistant cannot answer the question without knowing which specific elephant the user sponsors.",
+      "clarification": "The elephant I sponsor is the one standing on the left.",
+      "answer": "No, the elephant you sponsor on the left has shorter tusks compared to the elephant standing on the right.",
+      "media_url": "/static/media/video/6862984319.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:audio:19",
       "key": "slue_p2_sqa5_test_258",
       "category": "missing_latent_evidence",
       "modality": "audio",
@@ -518,11 +507,11 @@
       "explanation": "The audio captures the speaker reading the text fluently, but their internal cognitive state and actual understanding of the subject matter are latent and cannot be determined from the recording alone.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_258.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_258.wav",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:audio:22",
+      "id": "missing_latent_evidence:audio:20",
       "key": "slue_p2_sqa5_test_308",
       "category": "missing_latent_evidence",
       "modality": "audio",
@@ -530,11 +519,11 @@
       "explanation": "The audio features a person reading factual information about film adaptations of Hamlet. The speaker's underlying goal or intention for reading the text aloud is a latent mental state that cannot be observed from the audio alone.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_308.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_308.wav",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:audio:23",
+      "id": "missing_latent_evidence:audio:21",
       "key": "slue_p2_sqa5_test_13",
       "category": "missing_latent_evidence",
       "modality": "audio",
@@ -542,11 +531,11 @@
       "explanation": "While the speaker reads the historical text fluently, their actual cognitive comprehension of the material is a latent mental state that cannot be directly observed from the audio alone.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_13.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_13.wav",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:audio:24",
+      "id": "missing_latent_evidence:audio:22",
       "key": "slue_p2_sqa5_test_287",
       "category": "missing_latent_evidence",
       "modality": "audio",
@@ -554,31 +543,43 @@
       "explanation": "The audio mentions a writer's opinion that Mondale never gave Collins serious consideration, but Mondale's actual internal intentions and motivations for conducting the interview are latent mental states that cannot be definitively known from the audio alone.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_287.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_287.wav",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:video:20",
-      "key": "1005/4346015300",
+      "id": "missing_latent_evidence:audio:23",
+      "key": "slue_p2_sqa5_test_101",
       "category": "missing_latent_evidence",
-      "modality": "video",
-      "question": "Does the cat believe the moving figures on the screen are real physical objects?",
-      "explanation": "While the cat is visibly reacting to and pawing at the movement on the monitor, its internal cognitive state and whether it perceives the digital characters as actual physical entities cannot be determined from the video alone.",
+      "modality": "audio",
+      "question": "Did Luther feel personally satisfied with the resolution of the controversy after the negotiations concluded?",
+      "explanation": "The audio states that the negotiations were successfully concluded on February 17, 1546, but it does not reveal Luther's internal emotional state or whether he was personally satisfied with the final settlement.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/4346015300.mp4",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_101.wav",
       "media_exists": true
     },
     {
-      "id": "missing_latent_evidence:video:21",
-      "key": "0002/6862984319",
+      "id": "missing_latent_evidence:video:17",
+      "key": "1012/5866947362",
       "category": "missing_latent_evidence",
       "modality": "video",
-      "question": "Are these two elephants greeting each other after a long separation?",
-      "explanation": "While the video shows the elephants interacting and touching trunks, their past history and whether this interaction is a reunion after a long separation are latent details that cannot be determined from the visual evidence alone.",
+      "question": "Does the little girl actually recognize herself on every page, or is she just playfully repeating the phrase 'that's me'?",
+      "explanation": "The girl's internal cognitive state and whether she genuinely comprehends the images as herself or is merely engaging in a repetitive verbal game is a latent mental state that cannot be directly observed from the video.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/6862984319.mp4",
+      "media_url": "/static/media/video/5866947362.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:video:18",
+      "key": "1150/2876825076",
+      "category": "missing_latent_evidence",
+      "modality": "video",
+      "question": "Is the man in the foreground smiling because he is playing a prank on the people in the background?",
+      "explanation": "The video shows the man in the foreground smiling, but his internal motivation or intention for doing so is a latent cognitive state that cannot be directly observed.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/2876825076.mp4",
       "media_exists": true
     },
     {
@@ -590,7 +591,7 @@
       "explanation": "The video shows the toddler crawling toward another child holding a pinwheel after having his own taken away, but the toddler's specific intention or goal is a latent mental state that cannot be directly observed from the footage.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/5750350083.mp4",
+      "media_url": "/static/media/video/5750350083.mp4",
       "media_exists": true
     },
     {
@@ -602,7 +603,7 @@
       "explanation": "The video shows the boy running in circles around a toy car track, but his internal imagination or pretend-play scenario is a latent cognitive state that cannot be directly observed.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/7846636954.mp4",
+      "media_url": "/static/media/video/7846636954.mp4",
       "media_exists": true
     },
     {
@@ -614,23 +615,23 @@
       "explanation": "The video shows the recipient listening to the explanation and reacting positively, but her prior knowledge of the bird's meaning is a latent cognitive state that cannot be directly observed from her outward behavior.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/6097011028.mp4",
+      "media_url": "/static/media/video/6097011028.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:audio:25",
-      "key": "slue_p2_sqa5_test_101",
+      "id": "missing_nonstationary_external_information:audio:13",
+      "key": "slue_p2_sqa5_test_111",
       "category": "missing_nonstationary_external_information",
       "modality": "audio",
-      "question": "What is the current weather (at query time) in the town where the negotiations mentioned in the audio took place?",
-      "explanation": "The audio states that the negotiations for a settlement took place in Mansfeld. However, the current weather in Mansfeld is external, time-varying information that cannot be determined from the audio alone.",
-      "clarification": "The current weather in Mansfeld is sunny with a temperature of 22°C.",
-      "answer": "The current weather in Mansfeld, the town where the negotiations took place, is sunny with a temperature of 22°C.",
-      "media_url": "media/audio/slue_p2_sqa5_test_101.wav",
+      "question": "How many years have passed between the year Luther wrote the letter to George Spalatin mentioned in the audio and the current year (at query time)?",
+      "explanation": "The audio states that Luther wrote the letter to George Spalatin in 1524. To calculate the exact number of years that have passed since then, the current year is required.",
+      "clarification": "The current year is 2024.",
+      "answer": "500 years.",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_111.wav",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:audio:26",
+      "id": "missing_nonstationary_external_information:audio:20",
       "key": "slue_p2_sqa5_test_366",
       "category": "missing_nonstationary_external_information",
       "modality": "audio",
@@ -638,23 +639,11 @@
       "explanation": "The audio mentions Washington National Airport, but determining its current temperature requires real-time external weather data.",
       "clarification": "The current temperature at Washington National Airport is 72 degrees Fahrenheit.",
       "answer": "The current temperature at Washington National Airport is 72 degrees Fahrenheit.",
-      "media_url": "media/audio/slue_p2_sqa5_test_366.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_366.wav",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:audio:27",
-      "key": "slue_p2_sqa5_test_332",
-      "category": "missing_nonstationary_external_information",
-      "modality": "audio",
-      "question": "What is the current temperature (at query time) in the city where the trial of the defense attorney's clients mentioned in the audio took place?",
-      "explanation": "The audio mentions defense attorney Clarence Darrow and his clients, Leopold and Loeb. Their famous trial took place in Chicago. To answer the question, one needs to know the current temperature in Chicago, which is external, time-varying information.",
-      "clarification": "The current temperature in Chicago is 65°F.",
-      "answer": "Based on the audio, the clients are Leopold and Loeb, whose trial took place in Chicago. Given the current information, the temperature in Chicago is 65°F.",
-      "media_url": "media/audio/slue_p2_sqa5_test_332.wav",
-      "media_exists": true
-    },
-    {
-      "id": "missing_nonstationary_external_information:audio:28",
+      "id": "missing_nonstationary_external_information:audio:21",
       "key": "slue_p2_sqa5_test_359",
       "category": "missing_nonstationary_external_information",
       "modality": "audio",
@@ -662,11 +651,11 @@
       "explanation": "The audio states that the consistory court of the diocese of Worcester issued the marriage license. To answer the question, one needs to know the current bishop of the diocese of Worcester, which is external, time-varying information.",
       "clarification": "The current bishop of the diocese of Worcester is John Inge.",
       "answer": "John Inge.",
-      "media_url": "media/audio/slue_p2_sqa5_test_359.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_359.wav",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:audio:29",
+      "id": "missing_nonstationary_external_information:audio:22",
       "key": "slue_p2_sqa5_test_395",
       "category": "missing_nonstationary_external_information",
       "modality": "audio",
@@ -674,11 +663,23 @@
       "explanation": "The audio discusses Canada's economic performance since 2001. To answer the question, the current exchange rate between the US dollar and the Canadian dollar (CAD) is required, which is external, time-varying information.",
       "clarification": "The current exchange rate is 1.35 Canadian dollars to 1 US dollar.",
       "answer": "Based on the audio highlighting Canada's economic performance, the current exchange rate for its currency is 1.35 Canadian dollars to 1 US dollar.",
-      "media_url": "media/audio/slue_p2_sqa5_test_395.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_395.wav",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:video:25",
+      "id": "missing_nonstationary_external_information:audio:23",
+      "key": "slue_p2_sqa5_test_214",
+      "category": "missing_nonstationary_external_information",
+      "modality": "audio",
+      "question": "What is the current (at query time) global number of active cases for the disease that zinc preparations were used to prevent in the 1930s, according to the audio?",
+      "explanation": "The audio states that zinc preparations were used in the 1930s in a failed attempt to prevent polio infections. To answer the question, the current global number of active polio cases is needed, which is external, time-varying information.",
+      "clarification": "The current global number of reported active polio cases is 30.",
+      "answer": "According to the audio, zinc preparations were used in the 1930s to prevent polio infections. Based on the provided clarification information, there are currently 30 active cases of polio globally.",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_214.wav",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:video:17",
       "key": "0059/3081360150",
       "category": "missing_nonstationary_external_information",
       "modality": "video",
@@ -686,11 +687,11 @@
       "explanation": "The man in the video is wearing a cap with 'JAMESTOWN' clearly embroidered on the front. However, the temperature in Jamestown is a constantly changing environmental condition. To answer the question, live weather data for Jamestown at the exact time of the query is required.",
       "clarification": "At query time, the temperature in Jamestown is 65°F.",
       "answer": "Based on the man's cap, the municipality is Jamestown, and the temperature there at query time is 65°F.",
-      "media_url": "media/video/3081360150.mp4",
+      "media_url": "/static/media/video/3081360150.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:video:26",
+      "id": "missing_nonstationary_external_information:video:18",
       "key": "1023/7163754671",
       "category": "missing_nonstationary_external_information",
       "modality": "video",
@@ -698,35 +699,11 @@
       "explanation": "The video shows an orange bucket, but its retail price at a specific store like Home Depot is external, time-varying information that fluctuates and cannot be determined from the visual content alone.",
       "clarification": "At query time, the retail price of a standard 5-gallon orange bucket at Home Depot is $4.98.",
       "answer": "Based on the current pricing, the retail price of the orange bucket shown in the video is $4.98 at Home Depot.",
-      "media_url": "media/video/7163754671.mp4",
+      "media_url": "/static/media/video/7163754671.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_nonstationary_external_information:video:27",
-      "key": "0076/4254626112",
-      "category": "missing_nonstationary_external_information",
-      "modality": "video",
-      "question": "What is the current (at query time) stock price of the company that manufactured the printer visible on the desk in the background?",
-      "explanation": "The video shows a printer on the desk in the background. While the printer can be visually identified as a specific brand (e.g., an HP Deskjet), the company's stock price fluctuates continuously. Answering the question requires live access to external financial market data, which cannot be derived from the video or static knowledge alone.",
-      "clarification": "The printer is manufactured by HP Inc., and its stock price at query time is $29.50.",
-      "answer": "$29.50",
-      "media_url": "media/video/4254626112.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "missing_nonstationary_external_information:video:28",
-      "key": "1107/10174992863",
-      "category": "missing_nonstationary_external_information",
-      "modality": "video",
-      "question": "What is the current temperature in the capital of the country where the language the girls are speaking originated?",
-      "explanation": "The girls in the video are speaking Spanish, a language that originated in Spain. The capital of Spain is Madrid. The current temperature in Madrid is a dynamic, time-varying piece of information that cannot be determined from the video alone.",
-      "clarification": "The current temperature in Madrid is 22 degrees Celsius.",
-      "answer": "The girls are speaking Spanish, which originated in Spain. The capital of Spain is Madrid, and the current temperature there is 22 degrees Celsius.",
-      "media_url": "media/video/10174992863.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "missing_nonstationary_external_information:video:29",
+      "id": "missing_nonstationary_external_information:video:19",
       "key": "1130/5454409762",
       "category": "missing_nonstationary_external_information",
       "modality": "video",
@@ -734,23 +711,47 @@
       "explanation": "The open or closed status of snow trails changes frequently based on weather conditions, grooming schedules, and the season, requiring up-to-date external information to answer.",
       "clarification": "At query time, the Noquemanon Trail Network in Marquette, Michigan is open for fat biking.",
       "answer": "Yes, the trail is currently (at query time) open for fat biking.",
-      "media_url": "media/video/5454409762.mp4",
+      "media_url": "/static/media/video/5454409762.mp4",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:audio:30",
-      "key": "slue_p2_sqa5_test_214",
+      "id": "missing_nonstationary_external_information:video:20",
+      "key": "1008/3046372932",
+      "category": "missing_nonstationary_external_information",
+      "modality": "video",
+      "question": "How much does a black wire pet crate similar to the one enclosing the puppies currently cost at PetSmart?",
+      "explanation": "The video shows the puppies inside a black wire pet crate. The current retail price of this item at a specific store is external, non-stationary information that fluctuates over time due to sales, inflation, or inventory changes.",
+      "clarification": "A standard black wire pet crate currently costs $54.99 at PetSmart.",
+      "answer": "Based on current pricing, a black wire pet crate similar to the one shown in the video costs $54.99 at PetSmart.",
+      "media_url": "/static/media/video/3046372932.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:video:21",
+      "key": "1155/5219491835",
+      "category": "missing_nonstationary_external_information",
+      "modality": "video",
+      "question": "What is the current retail price on Amazon for the pacifier toy the baby is given?",
+      "explanation": "The video shows the baby receiving a pacifier attached to a small plush toy. Determining its current retail price requires live access to Amazon's pricing data, which is external market information that fluctuates over time and cannot be deduced from the video alone.",
+      "clarification": "The pacifier toy shown in the video currently retails for $14.95 on Amazon.",
+      "answer": "Based on current pricing, the pacifier toy the baby is given costs $14.95 on Amazon.",
+      "media_url": "/static/media/video/5219491835.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:audio:19",
+      "key": "slue_p2_sqa5_test_332",
       "category": "missing_observable_evidence",
       "modality": "audio",
-      "question": "Which specific brands of zinc-based cold products were removed from store shelves?",
-      "explanation": "The audio mentions that the FDA ordered the removal of zinc-based intranasal cold products from store shelves, but it does not state the specific brand names of the products affected.",
+      "question": "What is the speaker's facial expression when quoting Clarence Darrow?",
+      "explanation": "The audio recording only captures the speaker's voice and does not provide visual information about their facial expressions.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_214.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_332.wav",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:audio:31",
+      "id": "missing_observable_evidence:audio:23",
       "key": "slue_p2_sqa5_test_112",
       "category": "missing_observable_evidence",
       "modality": "audio",
@@ -758,11 +759,11 @@
       "explanation": "The audio ends right after the speaker says 'and the commission as a whole,' so the subsequent topic is an unrecorded event that cannot be determined from the provided clip.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_112.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_112.wav",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:audio:32",
+      "id": "missing_observable_evidence:audio:24",
       "key": "slue_p2_sqa5_test_229",
       "category": "missing_observable_evidence",
       "modality": "audio",
@@ -770,11 +771,11 @@
       "explanation": "The audio captures a person reading an informational text about choirs and accompaniment, but the speaker never states their name.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_229.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_229.wav",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:audio:33",
+      "id": "missing_observable_evidence:audio:25",
       "key": "slue_p2_sqa5_test_301",
       "category": "missing_observable_evidence",
       "modality": "audio",
@@ -782,11 +783,11 @@
       "explanation": "The audio cuts off mid-sentence right after the speaker says 'as well as completing...', so the final part of Victoria's 2003 education is missing from the recording.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_301.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_301.wav",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:audio:34",
+      "id": "missing_observable_evidence:audio:26",
       "key": "slue_p2_sqa5_test_142",
       "category": "missing_observable_evidence",
       "modality": "audio",
@@ -794,19 +795,31 @@
       "explanation": "The audio mentions that the section is accompanied by two images and provides the caption for the first one, but it does not state the caption or describe the content of the second image.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/audio/slue_p2_sqa5_test_142.wav",
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_142.wav",
       "media_exists": true
     },
     {
-      "id": "missing_observable_evidence:video:30",
-      "key": "1008/3046372932",
+      "id": "missing_observable_evidence:video:27",
+      "key": "0076/4254626112",
       "category": "missing_observable_evidence",
       "modality": "video",
-      "question": "What is printed on the outside of the cardboard box?",
-      "explanation": "The camera only shows the inside of the cardboard box, so any text or images on its exterior are out of view.",
+      "question": "What is inside the black bag sitting on the floor next to the rocking horse?",
+      "explanation": "The video shows the exterior of the black bag, but it remains closed throughout the clip, so its contents are never revealed.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/3046372932.mp4",
+      "media_url": "/static/media/video/4254626112.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:video:28",
+      "key": "1107/10174992863",
+      "category": "missing_observable_evidence",
+      "modality": "video",
+      "question": "What color are the shoes worn by the girl on the left?",
+      "explanation": "The video frames the girls from the thighs up, so their feet and shoes are out of frame and cannot be observed.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/10174992863.mp4",
       "media_exists": true
     },
     {
@@ -818,7 +831,7 @@
       "explanation": "The video only shows one side of the tennis court, so the opposite side is out of frame and it is unknown if there is an opponent.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/6091663460.mp4",
+      "media_url": "/static/media/video/6091663460.mp4",
       "media_exists": true
     },
     {
@@ -830,19 +843,7 @@
       "explanation": "The person speaking is not visible in the video, so their clothing cannot be observed.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/3308258691.mp4",
-      "media_exists": true
-    },
-    {
-      "id": "missing_observable_evidence:video:33",
-      "key": "1155/5219491835",
-      "category": "missing_observable_evidence",
-      "modality": "video",
-      "question": "What is the hair color of the person who gives the baby the pacifier?",
-      "explanation": "The video only shows the hand and arm of the person giving the pacifier; their head is off-camera.",
-      "clarification": null,
-      "answer": null,
-      "media_url": "media/video/5219491835.mp4",
+      "media_url": "/static/media/video/3308258691.mp4",
       "media_exists": true
     },
     {
@@ -854,7 +855,115 @@
       "explanation": "The man's lower body is occluded by the table and remains out of frame throughout the video, so his shoes are not visible.",
       "clarification": null,
       "answer": null,
-      "media_url": "media/video/5553110507.mp4",
+      "media_url": "/static/media/video/5553110507.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:audio:0",
+      "key": "slue_p2_sqa5_test_181",
+      "category": "answerable",
+      "modality": "audio",
+      "question": "What was the usual type of school discipline?",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_181.wav",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:audio:1",
+      "key": "slue_p2_sqa5_test_183",
+      "category": "answerable",
+      "modality": "audio",
+      "question": "Which country's imports became the de facto mass market leaders?",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_183.wav",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:audio:2",
+      "key": "slue_p2_sqa5_test_53",
+      "category": "answerable",
+      "modality": "audio",
+      "question": "How did Luther express the destruction?",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_53.wav",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:audio:3",
+      "key": "slue_p2_sqa5_test_125",
+      "category": "answerable",
+      "modality": "audio",
+      "question": "What kind of missions are the armed forces regularly deployed for?",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/audio/slue_p2_sqa5_test_125.wav",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:video:0",
+      "key": "1111/3430723284",
+      "category": "answerable",
+      "modality": "video",
+      "question": "why is the lady holding baby in her hand",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/3430723284.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:video:1",
+      "key": "1052/4522565412",
+      "category": "answerable",
+      "modality": "video",
+      "question": "why did the man want to try to solving the rubik s cube so quickly",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/4522565412.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:video:2",
+      "key": "1001/9289576155",
+      "category": "answerable",
+      "modality": "video",
+      "question": "why does one cat nudge the other at the beginning",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/9289576155.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:video:3",
+      "key": "1011/6447803681",
+      "category": "answerable",
+      "modality": "video",
+      "question": "where is this happening",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/6447803681.mp4",
+      "media_exists": true
+    },
+    {
+      "id": "answerable:video:4",
+      "key": "1005/2676529856",
+      "category": "answerable",
+      "modality": "video",
+      "question": "why was the baby moving around in circles at the start",
+      "explanation": null,
+      "clarification": null,
+      "answer": null,
+      "media_url": "/static/media/video/2676529856.mp4",
       "media_exists": true
     }
   ]

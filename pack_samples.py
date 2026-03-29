@@ -3,6 +3,8 @@
 Pack website samples: pick 5 per category/modality, copy media locally,
 write website/data/samples.json.
 
+Only samples with validation_result.keep == True in data_validation are included.
+
 Run from the repo root:
     python website/pack_samples.py
 """
@@ -15,11 +17,12 @@ import shutil
 from pathlib import Path
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-REPO_ROOT   = Path(__file__).resolve().parent.parent
-DATA_ROOT   = REPO_ROOT / "generated_data"
-WEBSITE_DIR = REPO_ROOT / "website"
-OUT_MEDIA   = WEBSITE_DIR / "static" / "media"
-OUT_DATA    = WEBSITE_DIR / "static" / "data"
+WEBSITE_DIR     = Path(__file__).resolve().parent
+REPO_ROOT       = WEBSITE_DIR.parent
+DATA_ROOT       = REPO_ROOT / "unanswerable_videoqa" / "generated_data"
+VALIDATION_ROOT = REPO_ROOT / "unanswerable_videoqa" / "data_validation"
+OUT_MEDIA       = WEBSITE_DIR / "static" / "media"
+OUT_DATA        = WEBSITE_DIR / "static" / "data"
 
 NEXTQA_VIDEO_ROOT = Path("/mnt/nlp/scratch/share/datasets/NEXTQA/NExTVideo")
 SLUE_AUDIO_ROOT   = Path(
@@ -37,6 +40,29 @@ PER_CATEGORY = 5
 FLAT_MEDIA = True
 
 # ── Helpers ────────────────────────────────────────────────────────────────
+
+def load_kept_keys(category: str, modality: str) -> set[str]:
+    """Return the set of keys with validation_result.keep == True."""
+    jf = (
+        VALIDATION_ROOT
+        / category
+        / modality
+        / "gemini_single_pass_category_decision_tree"
+        / "gemini_results.jsonl"
+    )
+    if not jf.exists():
+        return set()
+    kept: set[str] = set()
+    with jf.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            r = json.loads(line)
+            if r.get("validation_result", {}).get("keep") is True:
+                kept.add(str(r.get("key") or ""))
+    return kept
+
 
 def resolve_media(modality: str, key: str) -> Path | None:
     if not key:
@@ -73,6 +99,16 @@ def normalize_response(response) -> dict:
             "clarification": None, "answer": None}
 
 
+def normalize_validation_record(record: dict) -> dict:
+    """Map a data_validation record's flat fields to the response format."""
+    return {
+        "question":      str(record.get("question") or ""),
+        "explanation":   record.get("reference_explanation") or None,
+        "clarification": record.get("clarification_information") or None,
+        "answer":        record.get("answer_given_clarification_information") or None,
+    }
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -96,6 +132,11 @@ def main() -> None:
 
             used_keys.setdefault(modality, set())
             records = read_jsonl(jf)
+
+            # Only keep records validated as keep=True
+            kept_keys = load_kept_keys(category, modality)
+            if kept_keys:
+                records = [r for r in records if str(r.get("key") or "") in kept_keys]
 
             # Two passes: prefer keys not yet used globally, then fall back to any with media
             def candidates():
@@ -144,6 +185,80 @@ def main() -> None:
                 picked += 1
 
             print(f"{category}/{modality}: picked {picked}")
+
+    # ── answerable category (sourced directly from data_validation) ──────────
+    for modality in ["audio", "video"]:
+        jf = (
+            VALIDATION_ROOT
+            / "answerable"
+            / modality
+            / "gemini_single_pass_category_decision_tree"
+            / "gemini_results.jsonl"
+        )
+        if not jf.exists():
+            print(f"answerable/{modality}: jsonl not found, skipping")
+            continue
+
+        used_keys.setdefault(modality, set())
+        records = [
+            r for r in read_jsonl(jf)
+            if r.get("validation_result", {}).get("keep") is True
+        ]
+
+        def answerable_candidates():
+            seen: set[str] = set()
+            # First pass: keys not used by any other category
+            for r in records:
+                k = str(r.get("key") or "")
+                if k not in used_keys[modality] and k not in seen:
+                    seen.add(k)
+                    yield r
+            # Second pass: already-used keys (different category), still unique within answerable
+            for r in records:
+                k = str(r.get("key") or "")
+                if k in used_keys[modality] and k not in seen:
+                    seen.add(k)
+                    yield r
+
+        picked = 0
+        for idx, record in enumerate(answerable_candidates()):
+            if picked >= PER_CATEGORY:
+                break
+
+            key = str(record.get("key") or "")
+            src = resolve_media(modality, key)
+            if src is None:
+                continue
+
+            dest_dir = OUT_MEDIA / modality
+            dest_dir.mkdir(parents=True, exist_ok=True)
+            dest = dest_dir / src.name
+            if not dest.exists():
+                print(f"  copying {src.name} …")
+                shutil.copy2(src, dest)
+
+            used_keys[modality].add(key)
+            resp = normalize_validation_record(record)
+            sample_id = f"answerable:{modality}:{idx}"
+
+            samples.append({
+                "id":            sample_id,
+                "key":           key,
+                "category":      "answerable",
+                "modality":      modality,
+                "question":      resp["question"],
+                "explanation":   resp["explanation"],
+                "clarification": resp["clarification"],
+                "answer":        resp["answer"],
+                "media_url":     f"/static/media/{modality}/{dest.name}",
+                "media_exists":  True,
+            })
+
+            stats_by_category["answerable"] = stats_by_category.get("answerable", 0) + 1
+            stats_by_modality[modality] = stats_by_modality.get(modality, 0) + 1
+            picked += 1
+
+        print(f"answerable/{modality}: picked {picked}")
 
     output = {
         "stats": {
