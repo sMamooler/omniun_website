@@ -99,12 +99,39 @@ function renderMediaHTML(item) {
   return `<div class="media-missing">Unsupported modality</div>`;
 }
 
+/* ── Judge label → CSS class ───────────────────────────── */
+const JUDGE_LABEL_CLASS = {
+  "reasoned_abstention":                "pill-good",
+  "abstention_with_clarification_request": "pill-good",
+  "premise_refutation":                 "pill-good",
+  "confident_direct_answer":            "pill-bad",
+  "hedged_best_effort_answer":          "pill-warn",
+  "provides_multiple_answers":          "pill-warn",
+};
+
+function judgeLabel(item) {
+  if (!item.qwen_omni_judge_label) return "";
+  const cls = JUDGE_LABEL_CLASS[item.qwen_omni_judge_label] || "pill-neutral";
+  const text = item.qwen_omni_judge_label.replaceAll("_", " ");
+  return `<span class="pill ${cls}">${escapeHtml(text)}</span>`;
+}
+
 /* ── Render a single example card ──────────────────────── */
 function exampleCardHTML(item) {
   const isAudio = item.modality === "audio";
   const mediaZone = isAudio
     ? `<div class="card-media card-media-audio">${renderMediaHTML(item)}</div>`
     : `<div class="card-media">${renderMediaHTML(item)}</div>`;
+
+  const modelSection = item.qwen_omni_response ? `
+    <details class="model-response">
+      <summary>
+        <span class="model-name">Qwen3-Omni response</span>
+        ${judgeLabel(item)}
+      </summary>
+      <p class="model-response-text">${escapeHtml(item.qwen_omni_response)}</p>
+    </details>
+  ` : "";
 
   return `
     <div class="example-card">
@@ -115,6 +142,7 @@ function exampleCardHTML(item) {
           <span class="pill pill-neutral">${item.media_exists ? "media ready" : "no media"}</span>
         </div>
         <p class="card-key">${escapeHtml(item.key)}</p>
+        ${modelSection}
       </div>
     </div>
   `;

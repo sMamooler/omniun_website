@@ -393,6 +393,73 @@ button, input, select { font: inherit; color: inherit; }
   margin-top: 2px;
 }
 
+/* ── Model response pills ──────────────────────────────── */
+.pill-good {
+  background: rgba(34, 139, 34, 0.10);
+  color: #1a6b1a;
+  border-color: rgba(34, 139, 34, 0.20);
+}
+
+.pill-bad {
+  background: rgba(200, 40, 40, 0.10);
+  color: #a01818;
+  border-color: rgba(200, 40, 40, 0.20);
+}
+
+.pill-warn {
+  background: rgba(200, 140, 0, 0.10);
+  color: #7a5000;
+  border-color: rgba(200, 140, 0, 0.20);
+}
+
+/* ── Model response collapsible ────────────────────────── */
+.model-response {
+  margin-top: 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(29, 20, 15, 0.03);
+  overflow: hidden;
+}
+
+.model-response summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.model-response summary::-webkit-details-marker { display: none; }
+
+.model-response summary::before {
+  content: "▶";
+  font-size: 0.6rem;
+  color: var(--muted);
+  transition: transform 0.15s;
+}
+
+.model-response[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.model-name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.model-response-text {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text);
+  padding: 0 12px 10px;
+  white-space: pre-wrap;
+}
+
 /* ── Empty / loading states ────────────────────────────── */
 .empty-state {
   padding: 48px 24px;

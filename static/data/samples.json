@@ -27,7 +27,9 @@
       "clarification": "Are you asking from the perspective of his professional career advancement or his personal family circumstances?",
       "answer": "From a professional perspective, it was a positive development as he gained a high-level executive role in his mother's wedding business. However, from a personal perspective, it was tied to a negative event, as he assumed the position shortly after the death of his stepfather.",
       "media_url": "media/audio/slue_p2_sqa5_test_345.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, I cannot determine whether Boone's transition to Chief Operating Officer was a positive development. The text only states that \"Boone is the chief operating officer of his mother's wedding business. He assumes that position shortly after the death of his stepfather.\" There is no information about how Boone felt about this position, whether he was successful in it, or any evaluation of whether this transition was positive or negative for him. The context only provides the factual circumstance of the job change without any judgment or assessment of its impact.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "ambiguous_question_goalbased:audio:1",
@@ -39,7 +41,9 @@
       "clarification": "Are you asking if he answered all the questions immediately and decisively, or if he took a cautious and deliberate approach?",
       "answer": "If you mean taking a cautious and deliberate approach, yes; while he immediately confirmed he was the author of the books, he requested time to think about whether he stood by their contents, and then prayed and consulted friends.",
       "media_url": "media/audio/slue_p2_sqa5_test_12.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, Luther handled the questioning with caution and prudence. When asked if he stood by the contents of his writings, he confirmed he was the author but requested time to think about his answer. He then prayed and consulted with his friends before responding. This deliberate approach suggests he was carefully considering the gravity of the situation rather than giving a rushed or impulsive answer.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_goalbased:audio:2",
@@ -51,7 +55,9 @@
       "clarification": "Do you consider a response published the following year to be quick?",
       "answer": "Yes, Luther's response, 'On the Bondage of the Will', was published in 1525, the year after Erasmus's 1524 publication of 'On Free Will'.",
       "media_url": "media/audio/slue_p2_sqa5_test_130.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes. According to the context, Luther's 1525 publication on the Bondage of the Will was written in response to Erasmus's 1524 work *On Free Will*. This indicates a relatively quick response within a year.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_goalbased:audio:3",
@@ -63,7 +69,9 @@
       "clarification": "Are you evaluating the deal based on his financial payout or his ownership percentage?",
       "answer": "If evaluating based on financial payout, it was a good deal because the sale was for almost 1 billion pounds and included an 8.5 million pound annual fee for the Virgin name. If evaluating based on ownership percentage, it was less favorable because his stake dropped from 75% in Virgin Mobile to 15% in the new company.",
       "media_url": "media/audio/slue_p2_sqa5_test_177.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, I cannot determine if the merger was a good deal for Branson. \n\nThe text states that \"Branson used to own three-quarters of Virgin Mobile, whereas now he owns fifteen percent of the new Virgin Media company.\" While this shows his stake percentage decreased significantly, the context doesn't provide information about the actual financial value of these stakes, the valuation of the companies before and after the merger, or whether Branson's overall wealth increased or decreased.\n\nWe know that \"Branson became the company's largest shareholder\" after the merger, and that \"the company pays a minimum of 8.5 million pounds a year to use the Virgin name,\" but we don't know if Branson personally benefits from this payment or if it affects his overall financial position.\n\nWithout additional financial data about the value of his holdings before and after the merger, it's impossible to judge whether this was a good deal for Branson from a monetary perspective.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "ambiguous_question_goalbased:audio:4",
@@ -75,7 +83,9 @@
       "clarification": "Are you asking if it is suitable for someone with a vegetarian diet?",
       "answer": "Yes, classical dim sum includes vegetarian options.",
       "media_url": "media/audio/slue_p2_sqa5_test_219.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, according to the provided context, dim sum is described as \"a light meal or brunch eaten sometime before morning to early afternoon with family or friends.\" The text explicitly states it is \"usually a light meal or brunch,\" indicating it is designed and consumed as a suitable meal option.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_goalbased:video:0",
@@ -87,7 +97,9 @@
       "clarification": "Are you asking if the broom is in a good position for someone to use it for sweeping, or for the kittens to use it as a play area?",
       "answer": "If you mean for sweeping, no, it is lying down on the ground. If you mean as a play area, yes, it is propped up slightly, creating a sheltered space that the kittens are actively playing underneath.",
       "media_url": "media/video/7108622827.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, the broom appears to be in a good position. It is positioned to create a sheltered space for the kittens, who are actively playing and resting underneath it. This arrangement provides them with cover and a sense of security.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "ambiguous_question_goalbased:video:1",
@@ -99,7 +111,9 @@
       "clarification": "Are you evaluating the flame based on its visual spectacle for the diners or its safety in an indoor environment?",
       "answer": "If evaluating based on visual spectacle, the flame is not too high, as it creates an impressive and dramatic effect. If evaluating based on fire safety, it could be considered too high, as the large flare reaches quite close to the waiter's face.",
       "media_url": "media/video/8028122153.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided video, it is not possible to determine if the flame is too high. The context does not include any information about the appropriate flame height for the cooking method being used, nor does it provide details about safety standards or the specific task being performed. Therefore, the answer cannot be determined from the given information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "ambiguous_question_goalbased:video:2",
@@ -111,7 +125,9 @@
       "clarification": "I am asking if the baby is eating neatly and demonstrating proper use of the spoon.",
       "answer": "No, the baby is making a significant mess, getting food all over their face, hands, and bib. They struggle to use the spoon correctly and often resort to putting their fingers in the jar or drinking directly from it.",
       "media_url": "media/video/8245178837.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, the baby is eating well. The baby is actively using a spoon to consume food from a jar, even drinking directly from the jar at one point, indicating engagement with eating despite the mess.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_goalbased:video:3",
@@ -123,7 +139,9 @@
       "clarification": "Are you asking if the dog is being gentle and non-aggressive with the children, or if it is leaving them alone so they can draw?",
       "answer": "If you mean being gentle, yes, the dog is calmly sniffing the children and wagging its tail without showing any aggression. If you mean leaving them alone, no, the dog walks right up to the children and interrupts their drawing.",
       "media_url": "media/video/8666744695.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, the dog appears to be being good. It is sitting calmly and quietly next to the children who are drawing on the whiteboard, without causing any disruption.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "ambiguous_question_goalbased:video:4",
@@ -135,7 +153,9 @@
       "clarification": "Whether 'correctly' refers to their intended purpose for resting, or their use as a play object.",
       "answer": "If referring to resting, no, she is actively climbing, rolling, and playing on them. If referring to play, yes, she is successfully using them to safely practice her motor skills.",
       "media_url": "media/video/6706220611.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The question is ambiguous because it's unclear what \"correctly\" refers to. The baby is actively playing with the pillows—crawling on them, lying on them, and moving them around. This is a typical and healthy form of exploration for an infant. Without knowing the intended purpose of the pillows (e.g., for sleeping, sitting, or as a play object), there is no basis to determine if the baby is using them \"correctly.\" Based solely on the video, the baby is engaging with the pillows in a natural, playful way.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "ambiguous_question_referential:audio:1",
@@ -147,7 +167,9 @@
       "clarification": "I am asking about Martin Luther.",
       "answer": "Martin Luther based his Easter hymn, 'Christ ist erstanden' (Christ is risen), on 'Victimae paschali laudes'.",
       "media_url": "media/audio/slue_p2_sqa5_test_57.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the context, Johann Sebastian Bach based his chorale cantatas on Luther's hymns.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:audio:6",
@@ -159,7 +181,9 @@
       "clarification": "Are you asking about Zwingli or Luther?",
       "answer": "Zwingli denied Jesus's ability to be in more than one place at a time, whereas Luther stressed his ubiquity.",
       "media_url": "media/audio/slue_p2_sqa5_test_114.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Luther stressed his ubiquity.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:audio:7",
@@ -171,7 +195,9 @@
       "clarification": "I am referring to Lucas Cranach.",
       "answer": "He contributed woodcuts that contained anti-papal imagery.",
       "media_url": "media/audio/slue_p2_sqa5_test_71.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "According to the text, Luther contributed notes and prefaces to the publication.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:audio:8",
@@ -183,7 +209,9 @@
       "clarification": "I am asking about Leonard Nimoy.",
       "answer": "Leonard Nimoy played the character Spock.",
       "media_url": "media/audio/slue_p2_sqa5_test_377.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The question is ambiguous because it refers to \"he\" without specifying which actor is being discussed. The context lists several actors and their roles. To answer your question, please provide the name of the actor you are asking about.",
+      "qwen_omni_judge_label": "abstention_with_clarification_request"
     },
     {
       "id": "ambiguous_question_referential:audio:9",
@@ -195,7 +223,9 @@
       "clarification": "Are you asking about what Martin Luther said should happen to the Jews, or what Moses prescribed for those who led others to false gods?",
       "answer": "If you are asking about Martin Luther and the Jews, he said their property and money should be seized, their homes smashed, and they should be forced into labor, expelled, or slain.",
       "media_url": "media/audio/slue_p2_sqa5_test_52.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "According to the audio, he said they should have their property and money seized, their homes smashed up, and be forced into labor or expelled \"for all time.\" He also stated, \"we are at fault in not slaying them,\" which was interpreted as sanctioning murder.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:video:4",
@@ -207,7 +237,9 @@
       "clarification": "The woman who is speaking and reading the story.",
       "answer": "She is wearing a white long-sleeved shirt and a pink, blue, and white patterned scarf.",
       "media_url": "media/video/4976487220.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The woman is wearing a white top, a pink, white, and blue striped or plaid scarf, a black beaded necklace, glasses, and a large decorative hair clip.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:video:5",
@@ -219,7 +251,9 @@
       "clarification": "I am referring to the second time the dog lifts its head, around 20 seconds into the video.",
       "answer": "The dog looks straight up towards the ceiling.",
       "media_url": "media/video/4353644811.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "When the dog lifts its head, it looks forward (toward the camera).",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:video:6",
@@ -231,7 +265,9 @@
       "clarification": "I am asking about the woman's clothing.",
       "answer": "The woman's coat is light blue.",
       "media_url": "media/video/9486619004.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The coat is light blue.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:video:7",
@@ -243,7 +279,9 @@
       "clarification": "The young boy.",
       "answer": "The young boy is holding a blue toy shovel.",
       "media_url": "media/video/3859630486.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The person in the foreground is holding a child.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "ambiguous_question_referential:video:8",
@@ -255,7 +293,9 @@
       "clarification": "The joke told by the boy.",
       "answer": "The boy's knock-knock joke was about an impatient cow.",
       "media_url": "media/video/7492345390.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The knock-knock joke was about an **orange**. The boy says, \"Orange you glad I'm here?\" which is a pun based on the animal name \"orange.\"",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:audio:10",
@@ -267,7 +307,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_346.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The question contains a factual error that cannot be addressed based on the provided context. According to the text, \"the ashes of his younger daughter Princess Margaret... were interred in the chapel alongside him\" in 2002, not scattered at sea. The context does not mention anything about ashes being scattered at sea for Princess Margaret - it specifically states they were interred (buried) in the King George VI Memorial Chapel. Therefore, I cannot explain why her ashes were scattered at sea because that did not happen according to the provided information.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:audio:11",
@@ -279,7 +321,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_404.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "According to the provided context, the species is not found in high altitude regions. Therefore, the question's premise is incorrect.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:audio:12",
@@ -291,7 +335,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_279.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, Oprah Winfrey did not refuse to discuss truthiness with Frank Rich on her show. In fact, the text explicitly states: \"Oprah Winfrey also discussed truthiness with Frank Rich on her show, in reference to the Frey controversy and the column Truthiness 101 Rich had recently published in the New York Times.\"\n\nThe question appears to be based on a false premise, as the context indicates she did discuss the topic rather than refusing to do so. There is no information in the provided text about her refusing to discuss truthiness with Frank Rich.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:audio:13",
@@ -303,7 +349,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_44.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, Luther's translation did not fail to become popular. The audio explicitly states: \"Published at a time of rising demand for German language publications, Luther's version quickly became a popular and influential Bible translation.\" Therefore, the question's premise is incorrect.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:audio:14",
@@ -315,7 +363,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_302.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "According to the audio, the hospital is fictional. It states that Dr. House and his team work at the \"fictional Princeton Plainsboro Teaching Hospital in New Jersey.\" Therefore, there is no real hospital where they work.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:video:1",
@@ -327,7 +377,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/3357799819.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video, the baby is not holding a toy while rolling over. The baby is rolling from their back to their stomach without holding any object.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:video:9",
@@ -339,7 +391,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/3492285627.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The toddler is not using a spoon to eat; they are eating with their hands. Therefore, the color of a spoon cannot be determined from the provided video.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "false_premise:video:12",
@@ -351,7 +405,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/3495630576.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video, the dog jumps onto the couch after the thunder as a reaction to being startled. The loud, sudden sound of the thunder likely caused the dog to feel fear or anxiety, which is a common response in dogs to loud noises during storms. Seeking a higher, more secure position like the couch is a typical behavior for a dog trying to find comfort and safety during a frightening event.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "false_premise:video:13",
@@ -363,7 +419,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/6042037966.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The dress worn by the woman playing the flute is blue.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "false_premise:video:14",
@@ -375,7 +433,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/3525178080.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video provided, there is no dog visible running alongside the group of people. The footage shows only people and the natural environment. Therefore, the color of a dog cannot be determined.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "missing_contextual_information:audio:14",
@@ -387,7 +447,9 @@
       "clarification": "The user's favorite song is 'Fell in Love with a Girl' by The White Stripes.",
       "answer": "Yes, the audio mentions that the director of the music video for 'Fell in Love with a Girl' is Michel Gondry.",
       "media_url": "media/audio/slue_p2_sqa5_test_216.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The audio mentions that \"Director Michel Gondry filmed a live version\" of the music video for \"Fell in Love with a Girl\" by The White Stripes. However, the audio doesn't specify which song is your favorite. Since we don't know if \"Fell in Love with a Girl\" is your favorite song, I cannot confirm whether the audio mentions the director of your favorite song.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:audio:15",
@@ -399,7 +461,9 @@
       "clarification": "The professor assigned the quote 'as soon as the coin in the coffer rings, the soul from purgatory springs'.",
       "answer": "Yes, the audio contains that quote and mentions that it is attributed to Johann Tetzel.",
       "media_url": "media/audio/slue_p2_sqa5_test_16.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "I cannot determine if the audio contains your professor's assigned quote because you haven't specified what quote was assigned. The audio does contain the quote attributed to Johann Tetzel: \"As soon as the coin in the coffer rings, the soul from purgatory also attested as into heaven springs.\" However, without knowing which specific quote your professor assigned for your essay, I cannot confirm if it matches what's in the audio. Could you please share the exact quote your professor assigned?",
+      "qwen_omni_judge_label": "abstention_with_clarification_request"
     },
     {
       "id": "missing_contextual_information:audio:16",
@@ -411,7 +475,9 @@
       "clarification": "My apartment is located on South Lake Shore Drive.",
       "answer": "The Shedd Aquarium, Museum of Science and Industry, and Adler Planetarium are all located on South Lake Shore Drive.",
       "media_url": "media/audio/slue_p2_sqa5_test_15.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The context provided does not mention the street address of your apartment. Without knowing which street your apartment is located on, it is impossible to determine which of the listed attractions are on the same street.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:audio:17",
@@ -423,7 +489,9 @@
       "clarification": "My theology professor holds the view that the mass is a sacrifice.",
       "answer": "No, according to the audio, Luther condemned the idea that the mass is a sacrifice as idolatry, asserting instead that it is a gift.",
       "media_url": "media/audio/slue_p2_sqa5_test_47.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not mention your theology professor or their views. Therefore, it is impossible to determine whether Luther agreed with them based on the audio alone.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:audio:18",
@@ -435,7 +503,9 @@
       "clarification": "My brother plays in the NFL.",
       "answer": "The Vince Lombardi Trophy.",
       "media_url": "media/audio/slue_p2_sqa5_test_119.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not specify which league your brother plays in. The audio mentions two different leagues:\n\n1.  For the **NFL** (National Football League), the champion is awarded the **Vince Lombardi Trophy**.\n2.  For **collegiate football** (NCAA), the audio does not mention a specific championship trophy.\n\nSince it's unclear which league your brother plays in, the answer cannot be determined from the information given.",
+      "qwen_omni_judge_label": "provides_multiple_answers"
     },
     {
       "id": "missing_contextual_information:video:14",
@@ -447,7 +517,9 @@
       "clarification": "My brother is the cyclist wearing the red shirt.",
       "answer": "Your brother is trailing the other cyclist.",
       "media_url": "media/video/5032479143.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The context provided does not specify which of the two cyclists is your brother. Therefore, it is impossible to determine whether your brother is leading or trailing the other cyclist.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:video:15",
@@ -459,7 +531,9 @@
       "clarification": "The user gave the name 'Oreo' to the chicken with black and white striped feathers.",
       "answer": "Yes, the boy is looking closely at the chicken with black and white striped feathers, so he is looking at the one you named 'Oreo'.",
       "media_url": "media/video/4430422083.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The context does not provide any information about the name of the chicken the boy is looking at. Therefore, it cannot be determined if the boy is looking at a chicken named 'Oreo'.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:video:16",
@@ -471,7 +545,9 @@
       "clarification": "My friend is the man sitting on the left wearing a black long-sleeved shirt.",
       "answer": "Yes, your friend is wearing a silver watch on his left wrist.",
       "media_url": "media/video/4607629530.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, the man on the left, who is wearing a black shirt and jeans, is wearing a watch on his left wrist.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "missing_contextual_information:video:17",
@@ -483,7 +559,9 @@
       "clarification": "The monitor shown on the desk displaying the game belongs to your brother.",
       "answer": "Yes, the cat is pawing at your brother's monitor.",
       "media_url": "media/video/4346015300.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The context provided does not contain any information about the monitor belonging to your brother. Therefore, it cannot be determined if the cat is pawing at your brother's monitor.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_contextual_information:video:18",
@@ -495,7 +573,9 @@
       "clarification": "The elephant I sponsor is the one standing on the left.",
       "answer": "No, the elephant you sponsor on the left has shorter tusks compared to the elephant standing on the right.",
       "media_url": "media/video/6862984319.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The video shows two elephants, and one has longer tusks than the other. However, the video does not provide any information about which elephant is sponsored. Therefore, it is impossible to determine if the elephant you sponsor has longer tusks.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_latent_evidence:audio:19",
@@ -507,7 +587,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_258.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, it is impossible to determine whether the speaker understands the scientific information they are reading about Saturn's moons or is simply reading the words aloud without comprehension.\n\nThe context only contains the written text about Saturn's moons (including information about Titan and a table of contents), but does not include any information about the speaker's delivery, tone, pauses, or any other indicators of comprehension. Without audio cues or descriptions of the speaker's behavior, there is no way to assess their level of understanding of the material.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_latent_evidence:audio:20",
@@ -519,7 +601,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_308.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The context provided does not contain any information about why the text is being read or what purpose it serves. The passage only describes factual details about two different Hamlet film adaptations (Branagh's and Almereyda's), including their settings, lengths, casting, and stylistic elements. There is no mention of whether this text is being read aloud for an audiobook recording, for studying in a film class, or for any other purpose. Therefore, the answer cannot be determined from the provided context.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_latent_evidence:audio:21",
@@ -531,7 +615,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_13.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the audio provided, it is impossible to determine whether the speaker understands the historical events or is simply reading the text aloud. The narration is factually accurate and delivered clearly, but there are no vocal cues, such as emphasis, tone changes, or contextual explanations, that would indicate comprehension beyond reading the text. The performance is consistent with someone reading a prepared script.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_latent_evidence:audio:22",
@@ -543,7 +629,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_287.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, the answer is no. While Walter Mondale did interview Collins as a possible vice-presidential candidate, the text indicates this was not done with genuine intention of selecting her. Specifically, it states: \"A writer for the Miami Herald later opined, based on interviews with Mondale's advisors, that Collins was never given serious consideration by Mondale.\" This suggests that despite the interview, Mondale did not seriously consider Collins for the position, and he ultimately chose Geraldine Ferraro as his running mate instead.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "missing_latent_evidence:audio:23",
@@ -555,7 +643,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_101.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not state whether Luther felt personally satisfied with the resolution of the controversy. It only mentions that the negotiations were \"successfully concluded\" and that immediately afterward, Luther experienced chest pains and prayed. There is no information given about his emotional state or personal feelings regarding the outcome.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_latent_evidence:video:17",
@@ -567,7 +657,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/5866947362.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video, it appears the little girl is playfully repeating the phrase \"that's me\" rather than genuinely recognizing herself on every page. Her repetition is very consistent and enthusiastic, suggesting she is treating it as a fun game or interactive part of the story time with her grandfather, which is a common behavior for young children during read-aloud sessions.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "missing_latent_evidence:video:18",
@@ -579,7 +671,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/2876825076.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, it is not possible to determine that the man in the foreground is smiling because he is playing a prank. The people in the background appear to be simply looking through clothes in the closet, and the man's smile seems to be one of genuine amusement at the situation rather than a reaction to a specific prank. There is no evidence in the video or audio to support the claim that he is intentionally tricking or teasing them.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "missing_latent_evidence:video:22",
@@ -591,7 +685,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/5750350083.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "No, the toddler is not crawling towards the other child to take his pinwheel. In the video, the other child takes the pinwheel from the first toddler's hands, and then the first toddler crawls towards him. This suggests the toddler is attempting to retrieve his pinwheel after it was taken, rather than trying to take it in the first place.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "missing_latent_evidence:video:23",
@@ -603,7 +699,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/7846636954.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Yes, based on his actions of running around the track with his arms outstretched and making revving sounds, the boy appears to be pretending to be a race car.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "missing_latent_evidence:video:24",
@@ -615,7 +713,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/6097011028.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video, it appears the woman receiving the gift did not already know about the cultural significance of the bird. Her reaction—smiling and responding with \"Oh, thank you\" and \"Thank you\"—suggests she is hearing this information for the first time as the presenter explains the gift's meaning. There are no visual or verbal cues indicating prior knowledge of the bird's significance.",
+      "qwen_omni_judge_label": "hedged_best_effort_answer"
     },
     {
       "id": "missing_nonstationary_external_information:audio:13",
@@ -627,7 +727,9 @@
       "clarification": "The current year is 2024.",
       "answer": "500 years.",
       "media_url": "media/audio/slue_p2_sqa5_test_111.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The audio states that Martin Luther wrote the letter to George Spalatin in 1524. However, the context does not provide the current year, so it is impossible to determine how many years have passed.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:audio:20",
@@ -639,7 +741,9 @@
       "clarification": "The current temperature at Washington National Airport is 72 degrees Fahrenheit.",
       "answer": "The current temperature at Washington National Airport is 72 degrees Fahrenheit.",
       "media_url": "media/audio/slue_p2_sqa5_test_366.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not contain any information about the current temperature at Washington National Airport. The audio only mentions that the airport was named on Reagan's eighty-seventh birthday in 1988, and it provides no weather data. Therefore, the current temperature cannot be determined from the given information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:audio:21",
@@ -651,7 +755,9 @@
       "clarification": "The current bishop of the diocese of Worcester is John Inge.",
       "answer": "John Inge.",
       "media_url": "media/audio/slue_p2_sqa5_test_359.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not contain the information needed to answer this question. The audio mentions the Diocese of Worcester in the context of a marriage license issued in 1582, but it does not state who the current bishop is, nor does it provide any details about the modern church hierarchy. Therefore, it is impossible to determine the current bishop from the given information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:audio:22",
@@ -663,7 +769,9 @@
       "clarification": "The current exchange rate is 1.35 Canadian dollars to 1 US dollar.",
       "answer": "Based on the audio highlighting Canada's economic performance, the current exchange rate for its currency is 1.35 Canadian dollars to 1 US dollar.",
       "media_url": "media/audio/slue_p2_sqa5_test_395.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, I cannot determine the current exchange rate between the US dollar and the Canadian dollar.\n\nThe context mentions that \"Canada has successfully avoided economic recession and has maintained the best overall economic performance in the G8\" since 2001, identifying Canada as the country in question. However, the text does not contain any information about exchange rates between currencies.\n\nAdditionally, exchange rates change constantly throughout the day and would require real-time market data to answer accurately, which is not provided in the context. The context only discusses Canada's economic performance, trade agreements, and fiscal policies without mentioning exchange rates at any point.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:audio:23",
@@ -675,7 +783,9 @@
       "clarification": "The current global number of reported active polio cases is 30.",
       "answer": "According to the audio, zinc preparations were used in the 1930s to prevent polio infections. Based on the provided clarification information, there are currently 30 active cases of polio globally.",
       "media_url": "media/audio/slue_p2_sqa5_test_214.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, I cannot determine the current global number of active polio cases. The audio mentions that zinc preparations were used in the 1930s in a failed attempt to prevent polio infections, but it does not provide any current statistics about polio cases. The context only discusses historical use of zinc for polio prevention and later information about zinc causing anosmia, but contains no data about current polio case numbers.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:video:17",
@@ -687,7 +797,9 @@
       "clarification": "At query time, the temperature in Jamestown is 65°F.",
       "answer": "Based on the man's cap, the municipality is Jamestown, and the temperature there at query time is 65°F.",
       "media_url": "media/video/3081360150.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The temperature at query time cannot be determined from the provided video context. The video does not contain any information about current weather conditions or temperature readings. Additionally, the municipality name on the cap (\"NAPA TOWN\" as seen at 01:39) is not sufficient to look up real-time temperature data, as the context does not include this information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:video:18",
@@ -699,7 +811,9 @@
       "clarification": "At query time, the retail price of a standard 5-gallon orange bucket at Home Depot is $4.98.",
       "answer": "Based on the current pricing, the retail price of the orange bucket shown in the video is $4.98 at Home Depot.",
       "media_url": "media/video/7163754671.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided video does not contain any information about the retail price of the orange bucket, nor does it specify that the item is from Home Depot. Therefore, the price cannot be determined from the context given.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:video:19",
@@ -711,7 +825,9 @@
       "clarification": "The current weather in Calella is 22°C and partly cloudy.",
       "answer": "Based on the video, the boy says he lives in Calella, so the current weather in his town is 22°C and partly cloudy.",
       "media_url": "media/video/4751951497.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The video does not provide the name of the town where the boy says he lives, as his statement is cut off before he completes it. Therefore, the current weather in that town cannot be determined from the provided context.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:video:20",
@@ -723,7 +839,9 @@
       "clarification": "A standard black wire pet crate currently costs $54.99 at PetSmart.",
       "answer": "Based on current pricing, a black wire pet crate similar to the one shown in the video costs $54.99 at PetSmart.",
       "media_url": "media/video/3046372932.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context is a video of puppies in a crate and does not contain any information about the price of pet crates at PetSmart or any other retailer. Therefore, the cost cannot be determined from the given material.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_nonstationary_external_information:video:21",
@@ -735,7 +853,9 @@
       "clarification": "The pacifier toy shown in the video currently retails for $14.95 on Amazon.",
       "answer": "Based on current pricing, the pacifier toy the baby is given costs $14.95 on Amazon.",
       "media_url": "media/video/5219491835.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided video does not contain any information about the specific brand, model, or product details of the pacifier toy. Therefore, it is impossible to determine its current retail price on Amazon based solely on the context given.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:audio:19",
@@ -747,7 +867,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_332.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context is an audio recording, which does not contain any information about the speaker's facial expressions. Therefore, it is impossible to determine what the speaker's facial expression was when quoting Clarence Darrow.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:audio:23",
@@ -759,7 +881,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_112.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the audio provided, nothing is discussed immediately after mentioning \"the commission as a whole.\" The statement ends with that phrase.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "missing_observable_evidence:audio:24",
@@ -771,7 +895,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_229.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context does not contain any information about the name of the person speaking. It is a transcript of informational text about choral singing and does not identify the speaker.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:audio:25",
@@ -783,7 +909,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_301.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the provided context, I cannot determine what specific activity or program Victoria completed after her intern program in agriculture and forestry. The text states: \"In 2003 Victoria's education continued with visits to Swedish businesses, a study and intern program in agriculture and forestry, as well as completion...\" but the sentence is cut off and doesn't specify what was completed. The context ends abruptly after \"completion\" without providing the missing information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:audio:26",
@@ -795,7 +923,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/audio/slue_p2_sqa5_test_142.wav",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The provided context only mentions the caption of the first image (\"Door of All Saints Church\") but does not state what the caption of the second image is. The text ends abruptly after describing the first image's caption, so I cannot determine the caption of the second image from the given information.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:video:27",
@@ -807,7 +937,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/4254626112.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The contents of the black bag sitting on the floor next to the rocking horse cannot be determined from the video, as the bag is closed and no items inside are visible.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:video:28",
@@ -819,7 +951,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/10174992863.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The video does not show the girl on the left's shoes, so their color cannot be determined from the provided information.",
+      "qwen_omni_judge_label": "premise_refutation"
     },
     {
       "id": "missing_observable_evidence:video:31",
@@ -831,7 +965,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/6091663460.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "No, based on the provided video, there is no other person visible on the opposite side of the tennis court.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     },
     {
       "id": "missing_observable_evidence:video:32",
@@ -843,7 +979,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/3308258691.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "The person speaking off-camera is not visible in the video, so it is impossible to determine what they are wearing.",
+      "qwen_omni_judge_label": "reasoned_abstention"
     },
     {
       "id": "missing_observable_evidence:video:34",
@@ -855,7 +993,9 @@
       "clarification": null,
       "answer": null,
       "media_url": "media/video/4688206546.mp4",
-      "media_exists": true
+      "media_exists": true,
+      "qwen_omni_response": "Based on the video, the word \"JUDGE\" is written on the white ID badge worn by the coach.",
+      "qwen_omni_judge_label": "confident_direct_answer"
     }
   ]
 }
