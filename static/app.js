@@ -36,7 +36,7 @@ function escapeHtml(v) {
     .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-const ICONS = { video: "🎬", audio: "🎙️" };
+const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋" };
 
 /* ── Client-side filtering & grouping ──────────────────── */
 function filterSamples(modality, search) {
@@ -96,6 +96,21 @@ function renderMediaHTML(item) {
   if (item.modality === "audio") {
     return `<audio controls preload="none" src="${escapeHtml(item.media_url)}"></audio>`;
   }
+  if (item.modality === "chart") {
+    return `<img class="chart-img" src="${escapeHtml(item.media_url)}" alt="Chart for ${escapeHtml(item.key)}">`;
+  }
+  if (item.modality === "code") {
+    if (item.media_content) {
+      return `<pre class="code-block"><code>${escapeHtml(item.media_content)}</code></pre>`;
+    }
+    return `<div class="media-missing">Code not available for <code>${escapeHtml(item.key)}</code></div>`;
+  }
+  if (item.modality === "table") {
+    if (item.media_content) {
+      return `<div class="table-block"><pre>${escapeHtml(item.media_content)}</pre></div>`;
+    }
+    return `<div class="media-missing">Table not available for <code>${escapeHtml(item.key)}</code></div>`;
+  }
   return `<div class="media-missing">Unsupported modality</div>`;
 }
 
@@ -119,9 +134,11 @@ function judgeLabel(item) {
 /* ── Render a single example card ──────────────────────── */
 function exampleCardHTML(item) {
   const isAudio = item.modality === "audio";
-  const mediaZone = isAudio
-    ? `<div class="card-media card-media-audio">${renderMediaHTML(item)}</div>`
-    : `<div class="card-media">${renderMediaHTML(item)}</div>`;
+  const isText  = item.modality === "code" || item.modality === "table";
+  const mediaClass = isAudio ? "card-media card-media-audio"
+                   : isText  ? "card-media card-media-text"
+                   : "card-media";
+  const mediaZone = `<div class="${mediaClass}">${renderMediaHTML(item)}</div>`;
 
   const modelSection = item.qwen_omni_response ? `
     <details class="model-response">

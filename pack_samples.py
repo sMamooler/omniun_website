@@ -30,6 +30,18 @@ SLUE_AUDIO_ROOT   = Path(
     "AudioLLMs___slue_p2_sqa5_test/default/0.0.0/"
     "24809a6ef2e1243543d97a993c9b12765f0a0bff/audios"
 )
+CHARTQA_IMAGE_ROOT = Path(
+    "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
+    "HuggingFaceM4___ChartQA/test_images"
+)
+CODEQA_FILE_ROOT = Path(
+    "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
+    "smamooler___codeqa-gt50-python/test_code"
+)
+TABLEQA_FILE_ROOT = Path(
+    "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
+    "Multilingual-Multimodal-NLP___TableBench/test_tables"
+)
 
 VIDEO_EXTS = [".mp4", ".mkv", ".webm"]
 AUDIO_EXTS = [".wav", ".mp3", ".flac", ".ogg", ".oga", ".m4a"]
@@ -67,6 +79,16 @@ def load_kept_keys(category: str, modality: str) -> set[str]:
 def resolve_media(modality: str, key: str) -> Path | None:
     if not key:
         return None
+    if modality == "chart":
+        p = CHARTQA_IMAGE_ROOT / f"{key}.png"
+        return p if p.exists() else None
+    if modality == "code":
+        p = CODEQA_FILE_ROOT / f"{key}.py"
+        return p if p.exists() else None
+    if modality == "table":
+        # keys are hashes, filename is the hash + .md
+        p = TABLEQA_FILE_ROOT / f"{key}.md"
+        return p if p.exists() else None
     root = NEXTQA_VIDEO_ROOT if modality == "video" else SLUE_AUDIO_ROOT
     exts = VIDEO_EXTS if modality == "video" else AUDIO_EXTS
     for ext in exts:
@@ -158,7 +180,7 @@ def main() -> None:
                 resp = normalize_response(record.get("response"))
                 sample_id = f"{category}:{modality}:{idx}"
 
-                samples.append({
+                sample: dict = {
                     "id":            sample_id,
                     "key":           key,
                     "category":      category,
@@ -169,7 +191,14 @@ def main() -> None:
                     "answer":        resp.get("answer"),
                     "media_url":     f"media/{modality}/{dest.name}",
                     "media_exists":  True,
-                })
+                }
+
+                # For text-based modalities, embed content inline so the
+                # frontend can render it without a separate fetch.
+                if modality in ("code", "table"):
+                    sample["media_content"] = src.read_text(encoding="utf-8", errors="replace")
+
+                samples.append(sample)
 
                 stats_by_category[category] = stats_by_category.get(category, 0) + 1
                 stats_by_modality[modality] = stats_by_modality.get(modality, 0) + 1
