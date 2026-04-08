@@ -1,0 +1,2 @@
+def direct_get_account(node, part, account, marker=None, limit=None, prefix=None, delimiter=None, conn_timeout=5, response_timeout=15, end_marker=None, reverse=None, path='/' + account):
+    return _get_direct_account_container(path='Account', node=node, part=part, marker=marker, limit=limit, prefix=prefix, delimiter=delimiter, end_marker=end_marker, reverse=reverse, conn_timeout=conn_timeout, response_timeout=response_timeout)
