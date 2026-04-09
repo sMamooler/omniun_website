@@ -382,17 +382,46 @@ button, input, select { font: inherit; color: inherit; }
 .table-block {
   width: 100%;
   box-sizing: border-box;
+  overflow-x: auto;
+  padding: 4px 0;
 }
 
-.table-block pre {
-  margin: 0;
-  padding: 14px 16px;
+.table-block table {
+  width: 100%;
+  border-collapse: collapse;
   font-size: 0.78rem;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #c9d1d9;
-  white-space: pre;
-  overflow-x: auto;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.table-block thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table-block th {
+  background: #161b22;
+  color: #e6edf3;
+  font-weight: 600;
+  padding: 7px 12px;
+  text-align: left;
+  border-bottom: 2px solid #30363d;
+  white-space: nowrap;
+}
+
+.table-block td {
+  padding: 6px 12px;
+  border-bottom: 1px solid #21262d;
+  white-space: nowrap;
+}
+
+.table-block tbody tr:nth-child(even) td {
+  background: #0d1117;
+}
+
+.table-block tbody tr:hover td {
+  background: #1c2128;
 }
 
 /* Text zone */

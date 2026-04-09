@@ -85,6 +85,29 @@ function renderModalityButtons(container, compact) {
   }
 }
 
+/* ── Parse markdown table → HTML table ─────────────────── */
+function markdownTableToHTML(md) {
+  const lines = md.trim().split('\n').map(l => l.trim()).filter(l => l);
+  if (lines.length < 2) return `<div class="table-block"><pre>${escapeHtml(md)}</pre></div>`;
+
+  const parseCells = (line) =>
+    line.replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+
+  const sepIdx = lines.findIndex(l => /^\|?[\s\-:]+\|/.test(l) && /---/.test(l));
+  if (sepIdx < 1) return `<div class="table-block"><pre>${escapeHtml(md)}</pre></div>`;
+
+  const headers = parseCells(lines[0]);
+  const dataRows = lines.slice(sepIdx + 1);
+
+  const thead = `<thead><tr>${headers.map(h => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${dataRows.map(row => {
+    const cells = parseCells(row);
+    return `<tr>${cells.map(c => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`;
+  }).join('')}</tbody>`;
+
+  return `<div class="table-block"><table>${thead}${tbody}</table></div>`;
+}
+
 /* ── Render media inside a card ────────────────────────── */
 function renderMediaHTML(item) {
   if (!item.media_url) {
@@ -107,7 +130,7 @@ function renderMediaHTML(item) {
   }
   if (item.modality === "table") {
     if (item.media_content) {
-      return `<div class="table-block"><pre>${escapeHtml(item.media_content)}</pre></div>`;
+      return markdownTableToHTML(item.media_content);
     }
     return `<div class="media-missing">Table not available for <code>${escapeHtml(item.key)}</code></div>`;
   }
