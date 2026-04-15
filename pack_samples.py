@@ -19,8 +19,8 @@ from pathlib import Path
 # ── Paths ──────────────────────────────────────────────────────────────────
 WEBSITE_DIR     = Path(__file__).resolve().parent
 REPO_ROOT       = WEBSITE_DIR.parent
-DATA_ROOT       = REPO_ROOT / "unanswerable_videoqa" / "generated_data"
-VALIDATION_ROOT = REPO_ROOT / "unanswerable_videoqa" / "data_validation"
+DATA_ROOT       = REPO_ROOT / "omniun" / "generated_data"
+VALIDATION_ROOT = REPO_ROOT / "omniun" / "data_validation"
 OUT_MEDIA       = WEBSITE_DIR / "static" / "media"
 OUT_DATA        = WEBSITE_DIR / "static" / "data"
 
@@ -41,6 +41,10 @@ CODEQA_FILE_ROOT = Path(
 TABLEQA_FILE_ROOT = Path(
     "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
     "Multilingual-Multimodal-NLP___TableBench/test_tables"
+)
+NLGRAPH_FILE_ROOT = Path(
+    "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
+    "tasksource___nlgraph/test_graphs"
 )
 
 VIDEO_EXTS = [".mp4", ".mkv", ".webm"]
@@ -88,6 +92,9 @@ def resolve_media(modality: str, key: str) -> Path | None:
     if modality == "table":
         # keys are hashes, filename is the hash + .md
         p = TABLEQA_FILE_ROOT / f"{key}.md"
+        return p if p.exists() else None
+    if modality == "graph":
+        p = NLGRAPH_FILE_ROOT / f"{key}.txt"
         return p if p.exists() else None
     root = NEXTQA_VIDEO_ROOT if modality == "video" else SLUE_AUDIO_ROOT
     exts = VIDEO_EXTS if modality == "video" else AUDIO_EXTS
@@ -195,7 +202,7 @@ def main() -> None:
 
                 # For text-based modalities, embed content inline so the
                 # frontend can render it without a separate fetch.
-                if modality in ("code", "table"):
+                if modality in ("code", "table", "graph"):
                     sample["media_content"] = src.read_text(encoding="utf-8", errors="replace")
 
                 samples.append(sample)

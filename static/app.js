@@ -36,7 +36,7 @@ function escapeHtml(v) {
     .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋" };
+const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋", graph: "🕸️" };
 
 /* ── Client-side filtering & grouping ──────────────────── */
 function filterSamples(modality, search) {
@@ -134,6 +134,12 @@ function renderMediaHTML(item) {
     }
     return `<div class="media-missing">Table not available for <code>${escapeHtml(item.key)}</code></div>`;
   }
+  if (item.modality === "graph") {
+    if (item.media_content) {
+      return `<pre class="code-block graph-block"><code>${escapeHtml(item.media_content)}</code></pre>`;
+    }
+    return `<div class="media-missing">Graph not available for <code>${escapeHtml(item.key)}</code></div>`;
+  }
   return `<div class="media-missing">Unsupported modality</div>`;
 }
 
@@ -157,7 +163,7 @@ function judgeLabel(item) {
 /* ── Render a single example card ──────────────────────── */
 function exampleCardHTML(item) {
   const isAudio = item.modality === "audio";
-  const isText  = item.modality === "code" || item.modality === "table";
+  const isText  = item.modality === "code" || item.modality === "table" || item.modality === "graph";
   const mediaClass = isAudio ? "card-media card-media-audio"
                    : isText  ? "card-media card-media-text"
                    : "card-media";
