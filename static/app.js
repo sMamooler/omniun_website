@@ -108,6 +108,222 @@ function markdownTableToHTML(md) {
   return `<div class="table-block"><table>${thead}${tbody}</table></div>`;
 }
 
+/* ── Graph parsing ──────────────────────────────────────── */
+function parseGraphText(text) {
+  const lines = text.trim().split('\n').map(l => l.trim()).filter(Boolean);
+  let nodes = [], edges = [], directed = false, graphType = 'general';
+
+  if (/job applicants/i.test(text)) {
+    // Bipartite: applicants ↔ jobs
+    graphType = 'bipartite';
+    const m = text.match(/(\d+) job applicants[\s\S]*?and (\d+) jobs/i);
+    const nA = m ? +m[1] : 0, nJ = m ? +m[2] : 0;
+    for (let i = 0; i < nA; i++) nodes.push({ id: `a${i}`, label: `A${i}`, group: 'applicant' });
+    for (let j = 0; j < nJ; j++) nodes.push({ id: `j${j}`, label: `J${j}`, group: 'job' });
+    for (const line of lines) {
+      const m = line.match(/Applicant (\d+) is interested in job (\d+)/i);
+      if (m) edges.push({ source: `a${m[1]}`, target: `j${m[2]}` });
+    }
+
+  } else if (/should be visited before/i.test(text)) {
+    // Topological ordering: directed edges from ordering constraints
+    directed = true; graphType = 'directed';
+    const nodeSet = new Set();
+    const hm = text.match(/\d+ nodes numbered from \d+ to (\d+)/i);
+    if (hm) for (let i = 0; i <= +hm[1]; i++) nodeSet.add(String(i));
+    for (const line of lines) {
+      const m = line.match(/node (\d+) should be visited before node (\d+)/i);
+      if (m) { nodeSet.add(m[1]); nodeSet.add(m[2]); edges.push({ source: m[1], target: m[2] }); }
+    }
+    nodes = [...nodeSet].sort((a, b) => +a - +b).map(id => ({ id, label: id }));
+
+  } else if (/edge from node/i.test(text)) {
+    // Directed graph with capacities
+    directed = true; graphType = 'directed';
+    const nodeSet = new Set();
+    const hm = text.match(/nodes numbered from \d+ to (\d+)/i);
+    if (hm) for (let i = 0; i <= +hm[1]; i++) nodeSet.add(String(i));
+    for (const line of lines) {
+      const m = line.match(/edge from node (\d+) to node (\d+) with capacity (\d+)/i);
+      if (m) { nodeSet.add(m[1]); nodeSet.add(m[2]); edges.push({ source: m[1], target: m[2], label: m[3] }); }
+    }
+    nodes = [...nodeSet].sort((a, b) => +a - +b).map(id => ({ id, label: id }));
+
+  } else if (/edge between node/i.test(text)) {
+    // Undirected graph with weights
+    const nodeSet = new Set();
+    const hm = text.match(/nodes numbered from \d+ to (\d+)/i);
+    if (hm) for (let i = 0; i <= +hm[1]; i++) nodeSet.add(String(i));
+    for (const line of lines) {
+      const m = line.match(/edge between node (\d+) and node (\d+) with weight (\d+)/i);
+      if (m) { nodeSet.add(m[1]); nodeSet.add(m[2]); edges.push({ source: m[1], target: m[2], label: m[3] }); }
+    }
+    nodes = [...nodeSet].sort((a, b) => +a - +b).map(id => ({ id, label: id }));
+
+  } else {
+    // Standard undirected: parse (i,j) pairs
+    const nodeSet = new Set();
+    const hm = text.match(/nodes are numbered from \d+ to (\d+)/i) ||
+               text.match(/numbered from \d+ to (\d+)/i);
+    if (hm) for (let i = 0; i <= +hm[1]; i++) nodeSet.add(String(i));
+    for (const [, u, v] of text.matchAll(/\((\d+),(\d+)\)/g)) {
+      nodeSet.add(u); nodeSet.add(v);
+      edges.push({ source: u, target: v });
+    }
+    nodes = [...nodeSet].sort((a, b) => +a - +b).map(id => ({ id, label: id }));
+  }
+
+  return { nodes, edges, directed, graphType };
+}
+
+/* ── Graph force-directed layout ────────────────────────── */
+function forceLayout(nodes, edges, W, H) {
+  if (nodes.length === 0) return {};
+  const pad = 40, n = nodes.length;
+  const pos = {};
+  // Circular initialisation
+  const R = Math.min(W, H) / 2 - pad;
+  nodes.forEach((nd, i) => {
+    const a = (2 * Math.PI * i / n) - Math.PI / 2;
+    pos[nd.id] = { x: W / 2 + R * Math.cos(a), y: H / 2 + R * Math.sin(a) };
+  });
+  if (n < 2) return pos;
+
+  const k = Math.sqrt(W * H / n) * 0.75;
+  // Fewer iterations for large/dense graphs to keep it snappy
+  const iters = Math.max(40, Math.min(120, Math.floor(5000 / (n * n + edges.length + 1))));
+  let temp = k;
+
+  for (let it = 0; it < iters; it++) {
+    const disp = {};
+    nodes.forEach(nd => { disp[nd.id] = { x: 0, y: 0 }; });
+
+    // Repulsion (all pairs)
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        const ai = nodes[i].id, bi = nodes[j].id;
+        const dx = pos[ai].x - pos[bi].x, dy = pos[ai].y - pos[bi].y;
+        const d2 = dx * dx + dy * dy + 0.001, d = Math.sqrt(d2);
+        const f = k * k / d2;
+        disp[ai].x += dx * f / d; disp[ai].y += dy * f / d;
+        disp[bi].x -= dx * f / d; disp[bi].y -= dy * f / d;
+      }
+    }
+
+    // Attraction (edges)
+    for (const e of edges) {
+      const s = pos[e.source], t = pos[e.target];
+      if (!s || !t || e.source === e.target) continue;
+      const dx = t.x - s.x, dy = t.y - s.y;
+      const d = Math.sqrt(dx * dx + dy * dy) + 0.001;
+      const f = d / k;
+      disp[e.source].x += dx * f; disp[e.source].y += dy * f;
+      disp[e.target].x -= dx * f; disp[e.target].y -= dy * f;
+    }
+
+    // Apply displacements with temperature clamping
+    for (const nd of nodes) {
+      const p = pos[nd.id], dp = disp[nd.id];
+      const mag = Math.sqrt(dp.x * dp.x + dp.y * dp.y) + 0.001;
+      const move = Math.min(mag, temp);
+      p.x = Math.max(pad, Math.min(W - pad, p.x + (dp.x / mag) * move));
+      p.y = Math.max(pad, Math.min(H - pad, p.y + (dp.y / mag) * move));
+    }
+    temp *= 0.92;
+  }
+  return pos;
+}
+
+/* ── Graph → SVG string ─────────────────────────────────── */
+function graphToSVG(text) {
+  const { nodes, edges, directed, graphType } = parseGraphText(text);
+  if (nodes.length === 0 && edges.length === 0) return null;
+
+  const W = 560;
+  // Taller canvas for bipartite so nodes aren't cramped
+  const H = graphType === 'bipartite'
+    ? Math.max(220, Math.min(480,
+        Math.max(
+          nodes.filter(n => n.group === 'applicant').length,
+          nodes.filter(n => n.group === 'job').length,
+          1
+        ) * 34 + 60))
+    : 340;
+
+  let pos = {};
+
+  if (graphType === 'bipartite') {
+    const apps = nodes.filter(n => n.group === 'applicant');
+    const jobs = nodes.filter(n => n.group === 'job');
+    const lx = 90, rx = W - 90, vPad = 30;
+    const aStep = apps.length > 1 ? (H - 2 * vPad) / (apps.length - 1) : 0;
+    const jStep = jobs.length > 1 ? (H - 2 * vPad) / (jobs.length - 1) : 0;
+    apps.forEach((n, i) => { pos[n.id] = { x: lx, y: vPad + i * aStep }; });
+    jobs.forEach((n, i) => { pos[n.id] = { x: rx, y: vPad + i * jStep }; });
+  } else {
+    pos = forceLayout(nodes, edges, W, H);
+  }
+
+  const nr = Math.max(9, Math.min(15, Math.floor(180 / Math.max(nodes.length, 1))));
+  const fs = nr < 12 ? 8 : 10;
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" class="graph-svg">`;
+
+  if (directed) {
+    svg += `<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+      markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker></defs>`;
+  }
+
+  // Edges
+  for (const e of edges) {
+    const s = pos[e.source], t = pos[e.target];
+    if (!s || !t || e.source === e.target) continue;
+    const dx = t.x - s.x, dy = t.y - s.y;
+    const d = Math.sqrt(dx * dx + dy * dy) || 1;
+    const ux = dx / d, uy = dy / d;
+    const arrowOffset = directed ? nr + 4 : nr;
+    const x1 = (s.x + ux * nr).toFixed(1),      y1 = (s.y + uy * nr).toFixed(1);
+    const x2 = (t.x - ux * arrowOffset).toFixed(1), y2 = (t.y - uy * arrowOffset).toFixed(1);
+    const markerAttr = directed ? ' marker-end="url(#arr)"' : '';
+    svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"
+      stroke="#475569" stroke-width="1.2" stroke-opacity="0.75"${markerAttr}/>`;
+    if (e.label) {
+      const mx = ((s.x + t.x) / 2).toFixed(1), my = ((s.y + t.y) / 2 - 4).toFixed(1);
+      svg += `<text x="${mx}" y="${my}" font-size="8" fill="#94a3b8" text-anchor="middle">${escapeHtml(e.label)}</text>`;
+    }
+  }
+
+  // Nodes
+  for (const nd of nodes) {
+    const p = pos[nd.id];
+    if (!p) continue;
+    const fill = nd.group === 'applicant' ? '#0ea5e9'
+               : nd.group === 'job'       ? '#22c55e'
+               : '#3b82f6';
+    svg += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${nr}"
+      fill="${fill}" stroke="#1e293b" stroke-width="1.5"/>`;
+    svg += `<text x="${p.x.toFixed(1)}" y="${p.y.toFixed(1)}" font-size="${fs}"
+      fill="#f8fafc" text-anchor="middle" dominant-baseline="central" font-weight="600">${escapeHtml(nd.label)}</text>`;
+  }
+
+  // Bipartite legend
+  if (graphType === 'bipartite') {
+    svg += `<circle cx="14" cy="12" r="5" fill="#0ea5e9" stroke="#1e293b" stroke-width="1"/>
+    <text x="23" y="12" font-size="9" fill="#94a3b8" dominant-baseline="central">Applicants</text>
+    <circle cx="14" cy="26" r="5" fill="#22c55e" stroke="#1e293b" stroke-width="1"/>
+    <text x="23" y="26" font-size="9" fill="#94a3b8" dominant-baseline="central">Jobs</text>`;
+  }
+
+  // Stats footer
+  svg += `<text x="${W - 6}" y="${H - 5}" font-size="9" fill="#475569" text-anchor="end"
+    >${nodes.length} nodes · ${edges.length} edges</text>`;
+
+  svg += `</svg>`;
+  return `<div class="graph-viz">${svg}</div>`;
+}
+
 /* ── Render media inside a card ────────────────────────── */
 function renderMediaHTML(item) {
   if (!item.media_url) {
@@ -136,7 +352,8 @@ function renderMediaHTML(item) {
   }
   if (item.modality === "graph") {
     if (item.media_content) {
-      return `<pre class="code-block graph-block"><code>${escapeHtml(item.media_content)}</code></pre>`;
+      return graphToSVG(item.media_content)
+        || `<div class="media-missing">Could not render graph for <code>${escapeHtml(item.key)}</code></div>`;
     }
     return `<div class="media-missing">Graph not available for <code>${escapeHtml(item.key)}</code></div>`;
   }
@@ -163,9 +380,11 @@ function judgeLabel(item) {
 /* ── Render a single example card ──────────────────────── */
 function exampleCardHTML(item) {
   const isAudio = item.modality === "audio";
-  const isText  = item.modality === "code" || item.modality === "table" || item.modality === "graph";
+  const isText  = item.modality === "code" || item.modality === "table";
+  const isGraph = item.modality === "graph";
   const mediaClass = isAudio ? "card-media card-media-audio"
                    : isText  ? "card-media card-media-text"
+                   : isGraph ? "card-media card-media-graph"
                    : "card-media";
   const mediaZone = `<div class="${mediaClass}">${renderMediaHTML(item)}</div>`;
 

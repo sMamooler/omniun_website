@@ -1,0 +1,13 @@
+In an undirected graph, the nodes are numbered from 0 to 8, and every node has an embedding. (i,j) means that node i and node j are connected with an undirected edge.
+Embeddings:
+node 0: [1,0]
+node 1: [1,1]
+node 2: [0,0]
+node 3: [1,0]
+node 4: [1,0]
+node 5: [1,0]
+node 6: [0,0]
+node 7: [0,1]
+node 8: [0,1]
+The edges are: (0,5) (0,3) (0,4) (1,8) (1,7) (1,2) (2,6) (2,4) (3,7) (5,6) (6,8)
+In a simple graph convolution layer, each node's embedding is updated by the sum of its neighbors' embeddings.

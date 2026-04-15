@@ -1,0 +1,18 @@
+There are 7 job applicants numbered from 0 to 6, and 5 jobs numbered from 0 to 4. Each applicant is interested in some of the jobs. Each job can only accept one applicant and a job applicant can be appointed for only one job.
+Applicant 0 is interested in job 2.
+Applicant 0 is interested in job 3.
+Applicant 0 is interested in job 4.
+Applicant 1 is interested in job 1.
+Applicant 1 is interested in job 3.
+Applicant 2 is interested in job 4.
+Applicant 2 is interested in job 1.
+Applicant 2 is interested in job 0.
+Applicant 2 is interested in job 2.
+Applicant 2 is interested in job 3.
+Applicant 3 is interested in job 3.
+Applicant 3 is interested in job 2.
+Applicant 4 is interested in job 1.
+Applicant 4 is interested in job 0.
+Applicant 5 is interested in job 2.
+Applicant 6 is interested in job 4.
+Applicant 6 is interested in job 0.

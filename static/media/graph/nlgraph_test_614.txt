@@ -1,0 +1,12 @@
+In a directed graph, the nodes are numbered from 0 to 5, and the edges are:
+an edge from node 0 to node 5 with capacity 9,
+an edge from node 1 to node 2 with capacity 9,
+an edge from node 2 to node 1 with capacity 6,
+an edge from node 2 to node 4 with capacity 6,
+an edge from node 2 to node 5 with capacity 8,
+an edge from node 4 to node 3 with capacity 7,
+an edge from node 4 to node 5 with capacity 3,
+an edge from node 4 to node 2 with capacity 6,
+an edge from node 5 to node 1 with capacity 4,
+an edge from node 5 to node 4 with capacity 1,
+an edge from node 5 to node 2 with capacity 4.

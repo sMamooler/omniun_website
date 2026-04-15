@@ -1,0 +1,2 @@
+Determine if there is a path between two nodes in the graph. Note that (i,j) means that node i and node j are connected with an undirected edge.
+Graph: (1,4) (1,13) (2,11) (3,4) (3,6) (3,19) (4,20) (4,12) (4,16) (5,14) (5,9) (6,18) (6,8) (7,13) (7,8) (7,19) (7,15) (8,18) (8,20) (8,15) (11,14) (12,20) (12,13) (12,19) (12,16) (13,18) (13,15) (15,18) (15,19) (18,20) (18,19)

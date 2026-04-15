@@ -424,6 +424,27 @@ button, input, select { font: inherit; color: inherit; }
   background: #1c2128;
 }
 
+/* Graph visualization */
+.card-media-graph {
+  background: #0d1117;
+  min-height: 200px;
+  padding: 4px;
+  align-items: stretch;
+}
+
+.graph-viz {
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+.graph-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
 /* Text zone */
 .card-body {
   padding: 14px 16px 16px;

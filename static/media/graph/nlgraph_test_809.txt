@@ -1,0 +1,13 @@
+In an undirected graph, the nodes are numbered from 0 to 5, and the edges are:
+an edge between node 0 and node 2 with weight 2,
+an edge between node 0 and node 5 with weight 4,
+an edge between node 0 and node 3 with weight 1,
+an edge between node 0 and node 1 with weight 3,
+an edge between node 1 and node 2 with weight 4,
+an edge between node 1 and node 5 with weight 1,
+an edge between node 1 and node 4 with weight 4,
+an edge between node 2 and node 4 with weight 3,
+an edge between node 2 and node 3 with weight 1,
+an edge between node 3 and node 5 with weight 2,
+an edge between node 3 and node 4 with weight 3,
+an edge between node 4 and node 5 with weight 2.
