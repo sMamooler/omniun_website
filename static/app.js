@@ -36,7 +36,7 @@ function escapeHtml(v) {
     .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋", graph: "🕸️" };
+const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋", graph: "🕸️", document: "📄" };
 
 /* ── Client-side filtering & grouping ──────────────────── */
 function filterSamples(modality, search) {
@@ -350,6 +350,12 @@ function renderMediaHTML(item) {
     }
     return `<div class="media-missing">Table not available for <code>${escapeHtml(item.key)}</code></div>`;
   }
+  if (item.modality === "document") {
+    if (item.media_content) {
+      return `<div class="document-block">${escapeHtml(item.media_content)}</div>`;
+    }
+    return `<div class="media-missing">Document not available for <code>${escapeHtml(item.key)}</code></div>`;
+  }
   if (item.modality === "graph") {
     if (item.media_content) {
       return graphToSVG(item.media_content)
@@ -379,12 +385,14 @@ function judgeLabel(item) {
 
 /* ── Render a single example card ──────────────────────── */
 function exampleCardHTML(item) {
-  const isAudio = item.modality === "audio";
-  const isText  = item.modality === "code" || item.modality === "table";
-  const isGraph = item.modality === "graph";
-  const mediaClass = isAudio ? "card-media card-media-audio"
-                   : isText  ? "card-media card-media-text"
-                   : isGraph ? "card-media card-media-graph"
+  const isAudio    = item.modality === "audio";
+  const isText     = item.modality === "code" || item.modality === "table";
+  const isGraph    = item.modality === "graph";
+  const isDocument = item.modality === "document";
+  const mediaClass = isAudio    ? "card-media card-media-audio"
+                   : isText     ? "card-media card-media-text"
+                   : isGraph    ? "card-media card-media-graph"
+                   : isDocument ? "card-media card-media-document"
                    : "card-media";
   const mediaZone = `<div class="${mediaClass}">${renderMediaHTML(item)}</div>`;
 

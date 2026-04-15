@@ -46,6 +46,10 @@ NLGRAPH_FILE_ROOT = Path(
     "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
     "tasksource___nlgraph/test_graphs"
 )
+NEOQA_FILE_ROOT = Path(
+    "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
+    "mglockner___neoqa/test_documents"
+)
 
 VIDEO_EXTS = [".mp4", ".mkv", ".webm"]
 AUDIO_EXTS = [".wav", ".mp3", ".flac", ".ogg", ".oga", ".m4a"]
@@ -95,6 +99,9 @@ def resolve_media(modality: str, key: str) -> Path | None:
         return p if p.exists() else None
     if modality == "graph":
         p = NLGRAPH_FILE_ROOT / f"{key}.txt"
+        return p if p.exists() else None
+    if modality == "document":
+        p = NEOQA_FILE_ROOT / f"{key}.txt"
         return p if p.exists() else None
     root = NEXTQA_VIDEO_ROOT if modality == "video" else SLUE_AUDIO_ROOT
     exts = VIDEO_EXTS if modality == "video" else AUDIO_EXTS
@@ -202,7 +209,7 @@ def main() -> None:
 
                 # For text-based modalities, embed content inline so the
                 # frontend can render it without a separate fetch.
-                if modality in ("code", "table", "graph"):
+                if modality in ("code", "table", "graph", "document"):
                     sample["media_content"] = src.read_text(encoding="utf-8", errors="replace")
 
                 samples.append(sample)
