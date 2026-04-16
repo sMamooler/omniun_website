@@ -50,6 +50,7 @@ NEOQA_FILE_ROOT = Path(
     "/mnt/nlp/scratch/home/mamooler/.cache/huggingface/datasets/"
     "mglockner___neoqa/test_documents"
 )
+VG_IMAGE_ROOT = Path("/mnt/nlp/scratch/share/datasets/VisualGenome")
 
 VIDEO_EXTS = [".mp4", ".mkv", ".webm"]
 AUDIO_EXTS = [".wav", ".mp3", ".flac", ".ogg", ".oga", ".m4a"]
@@ -103,6 +104,12 @@ def resolve_media(modality: str, key: str) -> Path | None:
     if modality == "document":
         p = NEOQA_FILE_ROOT / f"{key}.txt"
         return p if p.exists() else None
+    if modality == "image":
+        for sub in ("VG_100K", "VG_100K_2"):
+            p = VG_IMAGE_ROOT / sub / f"{key}.jpg"
+            if p.exists():
+                return p
+        return None
     root = NEXTQA_VIDEO_ROOT if modality == "video" else SLUE_AUDIO_ROOT
     exts = VIDEO_EXTS if modality == "video" else AUDIO_EXTS
     for ext in exts:

@@ -1,14 +1,14 @@
 {
   "stats": {
-    "total_samples": 245,
+    "total_samples": 280,
     "counts_by_category": {
-      "ambiguous_question_goalbased": 35,
-      "ambiguous_question_referential": 35,
-      "false_premise": 35,
-      "missing_contextual_information": 35,
-      "missing_latent_evidence": 35,
-      "missing_nonstationary_external_information": 35,
-      "missing_observable_evidence": 35
+      "ambiguous_question_goalbased": 40,
+      "ambiguous_question_referential": 40,
+      "false_premise": 40,
+      "missing_contextual_information": 40,
+      "missing_latent_evidence": 40,
+      "missing_nonstationary_external_information": 40,
+      "missing_observable_evidence": 40
     },
     "counts_by_modality": {
       "audio": 35,
@@ -16,6 +16,7 @@
       "code": 35,
       "document": 35,
       "graph": 35,
+      "image": 35,
       "table": 35,
       "video": 35
     },
@@ -336,6 +337,66 @@
       "media_url": "media/graph/nlgraph_test_33.txt",
       "media_exists": true,
       "media_content": "In an undirected graph, the nodes are numbered from 0 to 8, and every node has an embedding. (i,j) means that node i and node j are connected with an undirected edge.\nEmbeddings:\nnode 0: [1,0]\nnode 1: [1,1]\nnode 2: [0,0]\nnode 3: [1,0]\nnode 4: [1,0]\nnode 5: [1,0]\nnode 6: [0,0]\nnode 7: [0,1]\nnode 8: [0,1]\nThe edges are: (0,5) (0,3) (0,4) (1,8) (1,7) (1,2) (2,6) (2,4) (3,7) (5,6) (6,8)\nIn a simple graph convolution layer, each node's embedding is updated by the sum of its neighbors' embeddings.\n"
+    },
+    {
+      "id": "ambiguous_question_goalbased:image:0",
+      "key": "2390819",
+      "category": "ambiguous_question_goalbased",
+      "modality": "image",
+      "question": "Is the weather good for a beach trip today?",
+      "explanation": "The question uses the evaluative word \"good\" without specifying the goal of the beach trip. The rainy and overcast conditions shown in the image are objectively poor for sunbathing or a picnic, but acceptable for surfing (as evidenced by the surfboards on the car).",
+      "clarification": "We are planning to lay out on the sand and sunbathe.",
+      "answer": "No, the ground is wet with puddles and the sky is heavily overcast, making it unsuitable for sunbathing.",
+      "media_url": "media/image/2390819.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_goalbased:image:1",
+      "key": "2352053",
+      "category": "ambiguous_question_goalbased",
+      "modality": "image",
+      "question": "Is it safe to snowboard here?",
+      "explanation": "The term 'safe' is ambiguous. It depends on whether the user is evaluating safety based on visibility (which is poor and potentially unsafe due to the heavy fog) or based on trail containment (which is safe due to the presence of a boundary marker).",
+      "clarification": "I mean safe in terms of having marked boundaries to prevent riders from going off-trail.",
+      "answer": "Yes, there is a rope fence set up to clearly mark the boundary of the area.",
+      "media_url": "media/image/2352053.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_goalbased:image:2",
+      "key": "2371717",
+      "category": "ambiguous_question_goalbased",
+      "modality": "image",
+      "question": "Is the towel arrangement practical?",
+      "explanation": "The term 'practical' is evaluative and underspecified. The arrangement might be practical for an adult washing their hands at the sink, but it might not be practical for a small child who cannot reach the higher towel ring, or for someone trying to grab a towel from a shower out of frame.",
+      "clarification": "Practical for an adult to dry their hands immediately after using the sink.",
+      "answer": "Yes, there is a white hand towel hanging on a ring on the wall directly to the left of the sink counter, making it easily reachable without having to move away from the sink.",
+      "media_url": "media/image/2371717.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_goalbased:image:3",
+      "key": "2381727",
+      "category": "ambiguous_question_goalbased",
+      "modality": "image",
+      "question": "Is there enough seating at the island?",
+      "explanation": "The question is goal-based ambiguous because 'enough' is an evaluative term that depends on the specific number of people the user intends to seat, which is not specified.",
+      "clarification": "I need to seat four people.",
+      "answer": "No, there are only three chairs at the island.",
+      "media_url": "media/image/2381727.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_goalbased:image:4",
+      "key": "2405662",
+      "category": "ambiguous_question_goalbased",
+      "modality": "image",
+      "question": "Is the man skateboarding safely?",
+      "explanation": "The question is goal-based ambiguous because 'safely' lacks a specific criterion. It could refer to wearing personal protective equipment (like a helmet) or his proximity to pedestrians in a public space.",
+      "clarification": "The safety criterion is whether he is wearing personal protective equipment.",
+      "answer": "No, he is not wearing a helmet or any other protective gear; he is only wearing a cap.",
+      "media_url": "media/image/2405662.jpg",
+      "media_exists": true
     },
     {
       "id": "ambiguous_question_goalbased:table:0",
@@ -778,6 +839,66 @@
       "media_content": "In an undirected graph, (i,j) means that node i and node j are connected with an undirected edge.\nThe nodes are numbered from 0 to 20, and the edges are: (9,2) (4,17) (10,12) (1,15) (8,16) (0,16) (16,14) (11,18) (0,5) (6,14) (15,13) (1,3) (7,10) (6,9) (17,8) (15,17) (12,14) (19,4) (20,10) (19,11)\n"
     },
     {
+      "id": "ambiguous_question_referential:image:5",
+      "key": "713891",
+      "category": "ambiguous_question_referential",
+      "modality": "image",
+      "question": "What color is the helmet?",
+      "explanation": "There are two helmets clearly visible in the foreground (one worn by the man in the red shirt and another worn by the child in the bike seat), making the referent 'the helmet' ambiguous.",
+      "clarification": "The helmet worn by the child in the green bike seat.",
+      "answer": "Yellow.",
+      "media_url": "media/image/713891.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:image:6",
+      "key": "2333736",
+      "category": "ambiguous_question_referential",
+      "modality": "image",
+      "question": "What is written on the sign?",
+      "explanation": "The image contains multiple signs (a large McDonald's sign, a blue street sign for Lankershim, and a smaller street sign for Riverside Dr), making the referent of 'the sign' ambiguous.",
+      "clarification": "The blue street sign in the top left corner.",
+      "answer": "Lankershim",
+      "media_url": "media/image/2333736.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:image:7",
+      "key": "2402618",
+      "category": "ambiguous_question_referential",
+      "modality": "image",
+      "question": "What brand is the motorcycle parked in the foreground?",
+      "explanation": "There are two motorcycles prominently parked in the foreground (one on the left and one in the center), making the phrase 'the motorcycle parked in the foreground' referentially ambiguous.",
+      "clarification": "The one on the left.",
+      "answer": "Kawasaki.",
+      "media_url": "media/image/2402618.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:image:8",
+      "key": "2348027",
+      "category": "ambiguous_question_referential",
+      "modality": "image",
+      "question": "What is the main color of the poster on the back of the bus?",
+      "explanation": "There are three distinct posters displayed next to each other on the back of the bus, making the singular phrase 'the poster' referentially ambiguous.",
+      "clarification": "The poster located in the middle.",
+      "answer": "The main color of the middle poster is green.",
+      "media_url": "media/image/2348027.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "ambiguous_question_referential:image:9",
+      "key": "2321168",
+      "category": "ambiguous_question_referential",
+      "modality": "image",
+      "question": "What color is the sign?",
+      "explanation": "The image contains two signs: a large STOP sign and a small sign with a bicycle symbol attached to the post below it. The phrase 'the sign' is referentially ambiguous because it could refer to either of them.",
+      "clarification": "I mean the small one at the bottom.",
+      "answer": "The small sign is blue.",
+      "media_url": "media/image/2321168.jpg",
+      "media_exists": true
+    },
+    {
       "id": "ambiguous_question_referential:table:5",
       "key": "c053c02d128201b79cbbd11c395f542a",
       "category": "ambiguous_question_referential",
@@ -1216,6 +1337,66 @@
       "media_url": "media/graph/nlgraph_test_682.txt",
       "media_exists": true,
       "media_content": "In an undirected graph, (i,j) means that node i and node j are connected with an undirected edge.\nThe nodes are numbered from 0 to 14, and the edges are: (0,3) (0,11) (0,14) (0,5) (0,7) (0,4) (0,8) (0,6) (0,10) (0,12) (1,12) (1,9) (1,10) (1,8) (1,3) (1,6) (1,14) (1,11) (1,5) (1,7) (1,13) (1,2) (2,8) (2,10) (2,7) (2,12) (2,3) (2,13) (2,4) (2,11) (2,5) (2,14) (2,9) (3,7) (3,12) (3,10) (3,4) (3,6) (3,13) (3,9) (3,5) (4,6) (4,11) (4,10) (4,7) (5,12) (5,11) (5,8) (5,6) (5,14) (5,9) (5,7) (6,7) (6,9) (6,8) (6,12) (6,14) (6,10) (7,8) (7,9) (7,10) (7,12) (7,14) (7,13) (8,14) (8,13) (8,12) (8,10) (8,11) (9,11) (9,10) (10,13) (10,12) (10,14) (11,14) (11,12) (11,13) (12,14) (12,13)\n"
+    },
+    {
+      "id": "false_premise:image:8",
+      "key": "2317015",
+      "category": "false_premise",
+      "modality": "image",
+      "question": "What is the person sitting in the red seats behind the player wearing?",
+      "explanation": "The red seats in the background behind the player are completely empty; there is no person sitting in them.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2317015.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "false_premise:image:9",
+      "key": "2366894",
+      "category": "false_premise",
+      "modality": "image",
+      "question": "What color is the dog running next to the horses?",
+      "explanation": "The question assumes there is a dog running next to the horses, but there are no dogs visible in the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2366894.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "false_premise:image:10",
+      "key": "2769",
+      "category": "false_premise",
+      "modality": "image",
+      "question": "What color is the car parked in front of the pink garage doors?",
+      "explanation": "The image does not show any car parked in front of the garage doors.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2769.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "false_premise:image:11",
+      "key": "2377787",
+      "category": "false_premise",
+      "modality": "image",
+      "question": "What color is the liquid inside the blender?",
+      "explanation": "The blender is empty; there is no liquid inside it.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2377787.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "false_premise:image:12",
+      "key": "2401144",
+      "category": "false_premise",
+      "modality": "image",
+      "question": "What color is the car parked next to the elephant?",
+      "explanation": "The question assumes there is a car parked next to the elephant, but there are no cars visible in the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2401144.jpg",
+      "media_exists": true
     },
     {
       "id": "false_premise:table:10",
@@ -1658,6 +1839,66 @@
       "media_content": "Determine if there is a path between two nodes in the graph. Note that (i,j) means that node i and node j are connected with an undirected edge.\nGraph: (0,18) (0,13) (0,3) (0,14) (0,15) (0,19) (0,7) (0,9) (0,10) (1,5) (1,18) (1,12) (1,13) (1,14) (1,6) (1,17) (1,16) (1,9) (1,10) (1,11) (2,18) (2,12) (2,13) (2,6) (2,15) (2,19) (2,7) (2,17) (2,16) (2,9) (2,10) (2,11) (3,18) (3,12) (3,13) (3,14) (3,6) (3,19) (3,17) (3,9) (3,10) (3,11) (5,18) (5,12) (5,13) (5,14) (5,6) (5,15) (5,19) (5,7) (5,16) (5,11) (6,18) (6,12) (6,7) (6,17) (6,16) (6,9) (6,10) (7,18) (7,12) (7,13) (7,15) (7,19) (7,17) (7,16) (7,10) (7,11) (9,18) (9,13) (9,15) (9,19) (9,16) (9,10) (10,18) (10,13) (10,14) (10,19) (10,17) (10,11) (11,12) (11,13) (11,14) (11,15) (11,19) (11,17) (11,16) (12,14) (12,19) (12,17) (12,16) (13,18) (13,15) (13,19) (13,17) (14,18) (14,15) (14,19) (14,17) (14,16) (15,18) (15,19) (15,16) (16,18) (17,18) (17,19) (18,19)\n"
     },
     {
+      "id": "missing_contextual_information:image:14",
+      "key": "2324497",
+      "category": "missing_contextual_information",
+      "modality": "image",
+      "question": "Am I waiting at the correct platform for my train?",
+      "explanation": "The assistant needs to know the user's assigned platform number to verify it against the platform number visible in the image.",
+      "clarification": "My ticket states that my train departs from platform 4.",
+      "answer": "Yes, you are at the correct platform, as the sign above indicates this is platform 4.",
+      "media_url": "media/image/2324497.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_contextual_information:image:16",
+      "key": "2397565",
+      "category": "missing_contextual_information",
+      "modality": "image",
+      "question": "Are there any ingredients I am allergic to on this large tart?",
+      "explanation": "The assistant needs to know the user's specific allergies to determine if any of the visible ingredients (like tomatoes, kiwi, olives, etc.) are allergens for them.",
+      "clarification": "I am allergic to kiwi.",
+      "answer": "Yes, there is kiwi on the tart, specifically in the green sections.",
+      "media_url": "media/image/2397565.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_contextual_information:image:17",
+      "key": "2347432",
+      "category": "missing_contextual_information",
+      "modality": "image",
+      "question": "What number is my brother wearing?",
+      "explanation": "The assistant cannot identify which player is the user's brother without external context establishing his identity.",
+      "clarification": "My brother is the player wearing the maroon shirt.",
+      "answer": "Your brother is wearing the number 2.",
+      "media_url": "media/image/2347432.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_contextual_information:image:18",
+      "key": "2359297",
+      "category": "missing_contextual_information",
+      "modality": "image",
+      "question": "Is my uncle in this photo?",
+      "explanation": "The assistant needs to know what the user's uncle looks like to determine if he is the person in the image.",
+      "clarification": "My uncle is a bald man with a goatee.",
+      "answer": "Yes, there is a bald man with a goatee sitting on the ledge.",
+      "media_url": "media/image/2359297.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_contextual_information:image:19",
+      "key": "2330351",
+      "category": "missing_contextual_information",
+      "modality": "image",
+      "question": "Is the person in the image using my rowing shell?",
+      "explanation": "The assistant needs to know the visual characteristics of the user's rowing shell to determine if it matches the one being used in the image.",
+      "clarification": "My rowing shell is a white single scull.",
+      "answer": "Yes, the person is using a white single scull, which matches the description of your rowing shell.",
+      "media_url": "media/image/2330351.jpg",
+      "media_exists": true
+    },
+    {
       "id": "missing_contextual_information:table:15",
       "key": "04b30155112a315590a58ffe5fcd4a0b",
       "category": "missing_contextual_information",
@@ -2096,6 +2337,66 @@
       "media_url": "media/graph/nlgraph_test_622.txt",
       "media_exists": true,
       "media_content": "In a directed graph, the nodes are numbered from 0 to 17, and the edges are:\nan edge from node 0 to node 15 with capacity 20,\nan edge from node 0 to node 7 with capacity 8,\nan edge from node 0 to node 9 with capacity 17,\nan edge from node 0 to node 12 with capacity 12,\nan edge from node 1 to node 9 with capacity 17,\nan edge from node 1 to node 6 with capacity 16,\nan edge from node 1 to node 3 with capacity 4,\nan edge from node 2 to node 16 with capacity 15,\nan edge from node 2 to node 8 with capacity 12,\nan edge from node 3 to node 14 with capacity 12,\nan edge from node 3 to node 9 with capacity 10,\nan edge from node 4 to node 14 with capacity 20,\nan edge from node 4 to node 6 with capacity 10,\nan edge from node 5 to node 0 with capacity 16,\nan edge from node 5 to node 13 with capacity 4,\nan edge from node 5 to node 8 with capacity 8,\nan edge from node 5 to node 2 with capacity 11,\nan edge from node 6 to node 4 with capacity 7,\nan edge from node 6 to node 13 with capacity 19,\nan edge from node 6 to node 14 with capacity 4,\nan edge from node 6 to node 9 with capacity 5,\nan edge from node 8 to node 0 with capacity 18,\nan edge from node 8 to node 16 with capacity 5,\nan edge from node 8 to node 15 with capacity 4,\nan edge from node 8 to node 2 with capacity 10,\nan edge from node 8 to node 9 with capacity 20,\nan edge from node 8 to node 5 with capacity 19,\nan edge from node 9 to node 4 with capacity 17,\nan edge from node 9 to node 13 with capacity 3,\nan edge from node 9 to node 17 with capacity 19,\nan edge from node 10 to node 4 with capacity 15,\nan edge from node 10 to node 1 with capacity 12,\nan edge from node 10 to node 8 with capacity 7,\nan edge from node 11 to node 16 with capacity 18,\nan edge from node 11 to node 13 with capacity 14,\nan edge from node 11 to node 8 with capacity 6,\nan edge from node 11 to node 17 with capacity 17,\nan edge from node 11 to node 12 with capacity 10,\nan edge from node 12 to node 1 with capacity 14,\nan edge from node 12 to node 7 with capacity 8,\nan edge from node 12 to node 3 with capacity 20,\nan edge from node 13 to node 2 with capacity 5,\nan edge from node 13 to node 5 with capacity 10,\nan edge from node 14 to node 0 with capacity 12,\nan edge from node 14 to node 1 with capacity 16,\nan edge from node 14 to node 5 with capacity 14,\nan edge from node 14 to node 6 with capacity 15,\nan edge from node 15 to node 0 with capacity 9,\nan edge from node 15 to node 1 with capacity 20,\nan edge from node 15 to node 6 with capacity 20,\nan edge from node 16 to node 1 with capacity 9,\nan edge from node 16 to node 9 with capacity 12,\nan edge from node 16 to node 11 with capacity 14,\nan edge from node 17 to node 4 with capacity 19,\nan edge from node 17 to node 13 with capacity 4,\nan edge from node 17 to node 11 with capacity 9.\n"
+    },
+    {
+      "id": "missing_latent_evidence:image:19",
+      "key": "2316102",
+      "category": "missing_latent_evidence",
+      "modality": "image",
+      "question": "Does the owner of the catamaran marked '33' intend to sail it today?",
+      "explanation": "The owner's intention or plan to use the boat is a latent mental state that cannot be observed from the image of the parked catamaran.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2316102.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:image:20",
+      "key": "2360019",
+      "category": "missing_latent_evidence",
+      "modality": "image",
+      "question": "Does the person with the tattooed arm intend to use the hot sauce on their eggs?",
+      "explanation": "The person's intention to use a specific condiment is a latent mental state that cannot be directly observed from the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2360019.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:image:21",
+      "key": "2367488",
+      "category": "missing_latent_evidence",
+      "modality": "image",
+      "question": "Is the dog panting because it is thirsty?",
+      "explanation": "The dog's internal physiological state of thirst is latent and cannot be definitively determined just from the visual of it panting next to a bowl.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2367488.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:image:22",
+      "key": "2340368",
+      "category": "missing_latent_evidence",
+      "modality": "image",
+      "question": "Is the remote control currently paired with a television?",
+      "explanation": "The pairing status of the remote control is a latent system state that cannot be visually observed from the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2340368.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_latent_evidence:image:23",
+      "key": "2331312",
+      "category": "missing_latent_evidence",
+      "modality": "image",
+      "question": "Is the truck's battery currently depleted?",
+      "explanation": "The electrical charge level of the truck's battery is a latent system state that cannot be visually observed from the exterior of the vehicle.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2331312.jpg",
+      "media_exists": true
     },
     {
       "id": "missing_latent_evidence:table:2",
@@ -2538,6 +2839,66 @@
       "media_content": "There are 4 job applicants numbered from 0 to 3, and 3 jobs numbered from 0 to 2. Each applicant is interested in some of the jobs. Each job can only accept one applicant and a job applicant can be appointed for only one job.\nApplicant 0 is interested in job 1.\nApplicant 0 is interested in job 0.\nApplicant 0 is interested in job 2.\nApplicant 1 is interested in job 1.\nApplicant 2 is interested in job 1.\nApplicant 3 is interested in job 0.\n"
     },
     {
+      "id": "missing_nonstationary_external_information:image:0",
+      "key": "2409655",
+      "category": "missing_nonstationary_external_information",
+      "modality": "image",
+      "question": "Is the establishment advertised on the sign currently open?",
+      "explanation": "The image shows a sign for 'Back Alley Waffles', but determining if it is open requires knowing the current time and the restaurant's current operating hours.",
+      "clarification": "The current time is 4:00 PM on a Thursday, and Back Alley Waffles is open from 7:00 AM to 3:00 PM on Thursdays.",
+      "answer": "No, the establishment is currently closed.",
+      "media_url": "media/image/2409655.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:image:1",
+      "key": "2374346",
+      "category": "missing_nonstationary_external_information",
+      "modality": "image",
+      "question": "Based on today's average market price per head for beef cattle, what is the total value of the cows visible in the field?",
+      "explanation": "The image shows exactly 3 cows, but the current average market price per head is required to calculate their total value, as livestock prices fluctuate over time.",
+      "clarification": "Today's average market price per head for beef cattle is $1,500.",
+      "answer": "$4,500.",
+      "media_url": "media/image/2374346.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:image:2",
+      "key": "2417452",
+      "category": "missing_nonstationary_external_information",
+      "modality": "image",
+      "question": "What is the current (as of today) retail price of a Classic Skate helmet on the official website of the brand whose logo is visible on the front of the skateboarder's helmet?",
+      "explanation": "The image shows the skateboarder wearing a helmet with a 'PRO-TEC' logo sticker on the front. To answer the question, the current retail price of a Pro-Tec Classic Skate helmet from their official website is required, which is external, time-varying information.",
+      "clarification": "The current retail price of a Pro-Tec Classic Skate helmet on their official website is $49.95.",
+      "answer": "$49.95",
+      "media_url": "media/image/2417452.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:image:3",
+      "key": "2404157",
+      "category": "missing_nonstationary_external_information",
+      "modality": "image",
+      "question": "Based on today's equipment rental rates, what is the total hourly cost to rent all of the empty lounge chairs visible on the sand?",
+      "explanation": "The image shows 4 empty lounge chairs on the sand, but calculating the total cost requires knowing the current hourly rental rate per chair, which is external, time-varying information.",
+      "clarification": "The current rental rate is $5 per lounge chair per hour.",
+      "answer": "Since there are 4 empty lounge chairs visible and the current rate is $5 per chair, the total hourly cost is $20.",
+      "media_url": "media/image/2404157.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_nonstationary_external_information:image:4",
+      "key": "2353170",
+      "category": "missing_nonstationary_external_information",
+      "modality": "image",
+      "question": "How much time is left until the ski lift shown in the background closes for the day?",
+      "explanation": "The image shows a ski lift in operation, but determining the exact time remaining until it closes requires knowing the current time and the resort's specific operating hours for the day, which are external, time-varying pieces of information not present in the image.",
+      "clarification": "The current time is 2:00 PM and the ski lift's scheduled closing time for today is 4:00 PM.",
+      "answer": "There are 2 hours left until the ski lift closes for the day.",
+      "media_url": "media/image/2353170.jpg",
+      "media_exists": true
+    },
+    {
       "id": "missing_nonstationary_external_information:table:22",
       "key": "31d0f57a11ed01b643d02e560eee8c05",
       "category": "missing_nonstationary_external_information",
@@ -2976,6 +3337,66 @@
       "media_url": "media/graph/nlgraph_test_924.txt",
       "media_exists": true,
       "media_content": "In a directed graph with 11 nodes numbered from 0 to 10:\nnode 0 should be visited before node 3\nnode 0 should be visited before node 9\nnode 0 should be visited before node 4\nnode 0 should be visited before node 10\nnode 0 should be visited before node 6\nnode 0 should be visited before node 1\nnode 0 should be visited before node 8\nnode 2 should be visited before node 5\nnode 2 should be visited before node 4\nnode 2 should be visited before node 10\nnode 2 should be visited before node 8\nnode 3 should be visited before node 9\nnode 3 should be visited before node 4\nnode 3 should be visited before node 6\nnode 3 should be visited before node 1\nnode 3 should be visited before node 8\nnode 4 should be visited before node 10\nnode 4 should be visited before node 6\nnode 4 should be visited before node 1\nnode 4 should be visited before node 8\nnode 5 should be visited before node 3\nnode 5 should be visited before node 10\nnode 5 should be visited before node 6\nnode 5 should be visited before node 1\nnode 5 should be visited before node 8\nnode 7 should be visited before node 0\nnode 7 should be visited before node 9\nnode 7 should be visited before node 4\nnode 7 should be visited before node 1\nnode 7 should be visited before node 8\nnode 9 should be visited before node 10\nnode 9 should be visited before node 8\nnode 10 should be visited before node 1\n"
+    },
+    {
+      "id": "missing_observable_evidence:image:24",
+      "key": "1159945",
+      "category": "missing_observable_evidence",
+      "modality": "image",
+      "question": "What text is printed on the back of the yellow sign hanging from the crossing gate?",
+      "explanation": "The back side of the yellow sign is facing away from the camera and is not visible in the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/1159945.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:image:25",
+      "key": "2333926",
+      "category": "missing_observable_evidence",
+      "modality": "image",
+      "question": "What recycling number is stamped on the bottom of the large clear plastic container?",
+      "explanation": "The bottom of the large plastic container is resting on the surface and is occluded from view, making it impossible to see any stamped symbols.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2333926.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:image:26",
+      "key": "2334845",
+      "category": "missing_observable_evidence",
+      "modality": "image",
+      "question": "What is displayed on the screen of the phone the woman is holding?",
+      "explanation": "The screen of the phone is facing the woman and is not visible from the camera's perspective.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2334845.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:image:27",
+      "key": "2390964",
+      "category": "missing_observable_evidence",
+      "modality": "image",
+      "question": "What is printed on the front of the white billboard on the right side of the tracks?",
+      "explanation": "The billboard is facing away from the camera, so its front side is not visible.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2390964.jpg",
+      "media_exists": true
+    },
+    {
+      "id": "missing_observable_evidence:image:28",
+      "key": "2367594",
+      "category": "missing_observable_evidence",
+      "modality": "image",
+      "question": "What connection ports are present on the back of the Dell monitor?",
+      "explanation": "The back of the monitor is facing away from the camera and is not visible in the image.",
+      "clarification": null,
+      "answer": null,
+      "media_url": "media/image/2367594.jpg",
+      "media_exists": true
     },
     {
       "id": "missing_observable_evidence:table:17",

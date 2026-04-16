@@ -36,7 +36,7 @@ function escapeHtml(v) {
     .replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋", graph: "🕸️", document: "📄" };
+const ICONS = { video: "🎬", audio: "🎙️", chart: "📊", code: "💻", table: "📋", graph: "🕸️", document: "📄", image: "🖼️" };
 
 /* ── Client-side filtering & grouping ──────────────────── */
 function filterSamples(modality, search) {
@@ -337,6 +337,9 @@ function renderMediaHTML(item) {
   }
   if (item.modality === "chart") {
     return `<img class="chart-img" src="${escapeHtml(item.media_url)}" alt="Chart for ${escapeHtml(item.key)}">`;
+  }
+  if (item.modality === "image") {
+    return `<img class="chart-img" src="${escapeHtml(item.media_url)}" alt="Image for ${escapeHtml(item.key)}">`;
   }
   if (item.modality === "code") {
     if (item.media_content) {
